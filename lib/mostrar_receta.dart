@@ -38,8 +38,7 @@ class MostrarReceta extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: FadeInImage(
-                      placeholder:
-                          const AssetImage("assets/images/loading1.gif"),
+                      placeholder: const AssetImage("assets/loading1.gif"),
                       image: AssetImage(carruselImages.image),
                       height: 300,
                       fit: BoxFit.cover,
