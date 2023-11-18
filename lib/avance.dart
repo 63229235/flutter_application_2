@@ -138,7 +138,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
               ),
               ListTile(
                 leading: Icon(Icons.contact_support),
-                title: Text('tiendas'),
+                title: Text('Tiendas'),
                 onTap: () {
                   Route route = MaterialPageRoute(builder: (_) => Carousel());
                   Navigator.push(context, route);
