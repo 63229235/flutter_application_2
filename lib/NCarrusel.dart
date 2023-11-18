@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_application_2/catalogo/Catalago.dart';
 import 'package:flutter_application_2/catalogo/Catalago2.dart';
+import 'package:flutter_application_2/catalogo/Catalago3.dart';
+import 'package:flutter_application_2/catalogo/Catalago4.dart';
 
 class NCarrusel extends StatefulWidget {
   @override
@@ -22,12 +24,12 @@ class _MySliderState extends State<NCarrusel> {
       print('Tocaste la segunda imagen');
     },
     (context) {
-      Route route = MaterialPageRoute(builder: (_) => Catalago2());
+      Route route = MaterialPageRoute(builder: (_) => Catalago3());
       Navigator.push(context, route);
       print('Tocaste la tercera imagen');
     },
     (context) {
-      Route route = MaterialPageRoute(builder: (_) => Catalago2());
+      Route route = MaterialPageRoute(builder: (_) => Catalago4());
       Navigator.push(context, route);
       print('Tocaste la cuarta imagen');
     },
