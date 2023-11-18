@@ -2,6 +2,7 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/carousel_page.dart';
 import 'package:flutter_application_2/login.dart';
 import 'package:flutter_application_2/mapa.dart';
 import 'package:flutter_application_2/nosotros.dart';
@@ -135,6 +136,14 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
                 title: Text('Soporte'),
                 onTap: () {},
               ),
+              ListTile(
+                leading: Icon(Icons.contact_support),
+                title: Text('tiendas'),
+                onTap: () {
+                  Route route = MaterialPageRoute(builder: (_) => Carousel());
+                  Navigator.push(context, route);
+                },
+              ),
             ],
           ),
         ));
@@ -152,9 +161,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
   }
 
   Widget _buildMenu() {
-    return ListView(
-      
-    );
+    return ListView();
   }
 
   Widget _buildLocation() {
