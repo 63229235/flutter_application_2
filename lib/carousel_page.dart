@@ -5,6 +5,7 @@ import 'package:flutter_application_2/mostrar_receta.dart';
 import 'package:flutter_application_2/carousel_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/model_recetas.dart';
+import 'package:flutter_application_2/catalogo/test1.dart';
 
 class Carousel extends StatefulWidget {
   final Receta? carruselImages;
@@ -22,7 +23,6 @@ class _CarouselState extends State<Carousel> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 254, 200, 83),
-      drawer: const Drawer(),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 254, 200, 83),
         elevation: 0,
@@ -71,11 +71,7 @@ class CardImages extends StatelessWidget {
           onTap: () {
             carruselImages.copy();
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => MostrarReceta(
-                          carruselImages: carruselImages,
-                        )));
+                context, MaterialPageRoute(builder: (context) => Catalago()));
           },
           child: FadeInImage(
             placeholder: const AssetImage("assets/loading1.gif"),

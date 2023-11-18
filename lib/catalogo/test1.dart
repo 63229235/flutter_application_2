@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
 class Product {
   final String name;
   final String description;
@@ -18,7 +14,7 @@ class Product {
   });
 }
 
-class MyApp extends StatelessWidget {
+class Catalago extends StatelessWidget {
   final List<Product> products = [
     Product(
       name: 'Producto 1',
@@ -81,10 +77,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Catálogo de Productos'),
-          backgroundColor: Colors.deepOrange,
-        ),
         body: Scrollbar(
           child: SingleChildScrollView(
             child: Column(

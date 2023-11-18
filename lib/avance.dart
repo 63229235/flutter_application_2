@@ -2,6 +2,7 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/NCarrusel.dart';
 import 'package:flutter_application_2/carousel_page.dart';
 import 'package:flutter_application_2/login.dart';
 import 'package:flutter_application_2/mapa.dart';
@@ -104,10 +105,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
             ListTile(
               leading: Icon(Icons.info),
               title: Text('Acerca de Nosotros'),
-              onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => MyAcerca());
-                Navigator.push(context, route);
-              },
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.contact_support),
@@ -118,7 +116,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
               leading: Icon(Icons.contact_support),
               title: Text('Tiendas'),
               onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => Carousel());
+                Route route = MaterialPageRoute(builder: (_) => NCarrusel());
                 Navigator.push(context, route);
               },
             ),
