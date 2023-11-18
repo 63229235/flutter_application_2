@@ -17,7 +17,6 @@ class _MapaState extends State<Mapa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: GoogleMap(
         initialCameraPosition: _initialCameraPosition,
       ),
