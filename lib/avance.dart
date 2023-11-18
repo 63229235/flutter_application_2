@@ -76,7 +76,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      'Fase Beta PIPIPI',
+                      'Protipo',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,

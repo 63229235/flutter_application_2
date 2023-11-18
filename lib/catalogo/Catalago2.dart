@@ -14,7 +14,7 @@ class Product {
   });
 }
 
-class Catalago extends StatelessWidget {
+class Catalago2 extends StatelessWidget {
   final List<Product> products = [
     Product(
       name: 'Producto 1',
