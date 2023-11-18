@@ -18,14 +18,6 @@ class Carousel extends StatefulWidget {
 }
 
 class _CarouselState extends State<Carousel> {
-  // List<Receta> carrusel = [];
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   carrusel = carruselImages;
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
