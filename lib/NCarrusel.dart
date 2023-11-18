@@ -46,9 +46,9 @@ class _MySliderState extends State<NCarrusel> {
           CarouselSlider(
             items: [
               _buildImageContainer('assets/images/1.jpg', 0),
-              _buildImageContainer('assets/image2.jpg', 1),
-              _buildImageContainer('assets/image3.jpg', 2),
-              _buildImageContainer('assets/image4.jpg', 3),
+              _buildImageContainer('assets/images/11.jpg', 1),
+              _buildImageContainer('assets/images/12.jpg', 2),
+              _buildImageContainer('assets/images/13.jpg', 3),
             ],
             options: CarouselOptions(
               autoPlay: true,
