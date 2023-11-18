@@ -68,7 +68,12 @@ class MyApp extends StatelessWidget {
       price: 27.99,
       image: 'assets/images/16.jpg',
     ),
-    // Agrega más productos según sea necesario
+    Product(
+      name: 'Producto 9',
+      description: 'Descripción del Producto 8',
+      price: 27.99,
+      image: 'assets/images/17.jpg',
+    ),
   ];
 
   @override
@@ -173,9 +178,7 @@ class ProductGrid extends StatelessWidget {
                         ),
                         SizedBox(height: 5),
                         ElevatedButton(
-                          onPressed: () {
-                            // Acciones al hacer clic en el botón
-                          },
+                          onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 4),
                             primary: Colors.deepOrange,
