@@ -17,34 +17,34 @@ class Product {
 class Catalago extends StatelessWidget {
   final List<Product> products = [
     Product(
-      name: 'Producto 1',
+      name: 'Concha Mexicana',
       description: 'Descripción del Producto 1',
       price: 19.99,
-      image: 'assets/images/1.jpg',
+      image: 'assets/images/pan-concha.jpg',
     ),
     Product(
-      name: 'Producto 2',
+      name: 'Pan Dulce',
       description: 'Descripción del Producto 2',
       price: 29.99,
-      image: 'assets/images/2.jpg',
+      image: 'assets/images/pan-dulce.jpg',
     ),
     Product(
-      name: 'Producto 3',
+      name: 'Pan de queso',
       description: 'Descripción del Producto 3',
       price: 15.99,
-      image: 'assets/images/11.jpg',
+      image: 'assets/images/pan-dulce.jpg',
     ),
     Product(
-      name: 'Producto 4',
+      name: 'Petty Pan',
       description: 'Descripción del Producto 4',
       price: 24.99,
-      image: 'assets/images/12.jpg',
+      image: 'assets/images/petty-pan.jpeg',
     ),
     Product(
-      name: 'Producto 5',
+      name: 'Rosquillas',
       description: 'Descripción del Producto 5',
       price: 10.99,
-      image: 'assets/images/13.jpg',
+      image: 'assets/images/rosquillas.jpeg',
     ),
     Product(
       name: 'Producto 6',
