@@ -7,7 +7,6 @@ import 'package:flutter_application_2/car4.dart';
 import 'package:flutter_application_2/opci.dart';
 import 'package:flutter_application_2/seguridad.dart';
 
-
 class MyTe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,20 @@ class MyTrendsScreen extends StatelessWidget {
           },
         ),
       ),
-      body: TrendList(),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: <Color>[
+              const Color(0xFFE6B08B),
+              const Color(0x00EF5350),
+            ],
+            begin: Alignment.topCenter,
+          ),
+        ),
+        child: TrendList(),
+      ),
     );
   }
 }
@@ -45,7 +57,6 @@ class TrendList extends StatelessWidget {
     'Panaderia Dulce',
     'El panadero cerca a tu hogar',
     'Rincón del Pan',
-    
   ];
 
   @override
@@ -85,11 +96,12 @@ class TrendCard extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => car3()),
             );
+            break;
           case 3:
             Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => car4()),
-            );  
-
+            );
+            break;
           default:
         }
       },
@@ -110,4 +122,5 @@ class TrendCard extends StatelessWidget {
     );
   }
 }
+
 

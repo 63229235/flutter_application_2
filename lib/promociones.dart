@@ -16,7 +16,12 @@ class MyOpcioness extends StatelessWidget {
   }
 }
 
-class MyHome extends StatelessWidget {
+class MyHome extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,51 +40,91 @@ class MyHome extends StatelessWidget {
           },
         ),
       ),
-      body: Column(
-        children: [
-          ImageSlideshow(
+      body: Container(
+        child: Scaffold(
+          body: Container(
             width: double.infinity,
-            height: 200,
-            initialPage: 0,
-            indicatorColor: Colors.black,
-            indicatorBackgroundColor: Colors.grey,
-            children: [
-              Image.asset(
-                'assets/images/19.jpg',
-                fit: BoxFit.cover,
+            height: double.infinity,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: <Color>[
+                  const Color(0xFFE6B08B),
+                  const Color(0x00EF5350),
+                ],
+                begin: Alignment.topCenter,
               ),
-              Image.asset(
-                'assets/images/56.jpg',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/images/34.jpg',
-                fit: BoxFit.cover,
-              ),
-            ],
-            onPageChanged: (value) {
-              print('Página cambiada: $value');
-            },
-            autoPlayInterval: 3000,
-            isLoop: true,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Text(
+                    'Aprovecha las promociones de 30% de descuento en las tiendas mostradas',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 40.0,
+                      vertical: 16.0,
+                    ),
+                    children: [
+                      ImageSlideshow(
+                        width: double.infinity,
+                        height: 200,
+                        initialPage: 0,
+                        indicatorColor: const Color(0xFFE6B08B),
+                        indicatorBackgroundColor: Colors.grey,
+                        children: [
+                          Image.asset(
+                            'assets/images/19.jpg',
+                            fit: BoxFit.cover,
+                          ),
+                          Image.asset(
+                            'assets/images/56.jpg',
+                            fit: BoxFit.cover,
+                          ),
+                          Image.asset(
+                            'assets/images/34.jpg',
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                        onPageChanged: (value) {
+                          print('Página cambiada: $value');
+                        },
+                        autoPlayInterval: 3000,
+                        isLoop: true,
+                      ),
+                      const SizedBox(height: 16),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          MyCombinedContainer(
+                            imagePath: 'assets/images/34.jpg',
+                            buttonText: ' bakery Agregada tu panaderia favorita',
+                            bottomText: 'Venezolana',
+                          ),
+                          MyCombinedContainer(
+                            imagePath: 'assets/images/19.jpg',
+                            buttonText:
+                                'Panaderia Rosa Agregada a tu panaderia favorita',
+                            bottomText: 'Miraflores',
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-          const SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              MyCombinedContainer(
-                imagePath: 'assets/images/34.jpg',
-                buttonText: ' bakery Agregada tu panaderia favorita',
-                bottomText: 'bakery',
-              ),
-              MyCombinedContainer(
-                imagePath: 'assets/images/19.jpg',
-                buttonText: 'Panaderia Rosa Agregada a tu panaderia favorita',
-                bottomText: 'Panaderia Rosa',
-              ),
-            ],
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -156,3 +201,4 @@ class MyCombinedContainer extends StatelessWidget {
     );
   }
 }
+
