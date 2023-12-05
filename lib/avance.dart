@@ -89,16 +89,6 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Inicio'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.shopping_cart),
-              title: Text('Carrito de Compras'),
-              onTap: () {},
-            ),
-            ListTile(
               leading: Icon(Icons.local_shipping),
               title: Text('Seguimiento de Pedidos'),
               onTap: () {},
@@ -115,7 +105,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(Icons.contact_support),
+              leading: Icon(Icons.shop_2_outlined),
               title: Text('Tiendas'),
               onTap: () {
                 Route route = MaterialPageRoute(builder: (_) => NCarrusel());
