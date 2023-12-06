@@ -1,4 +1,4 @@
-import 'package:flutter_application_2/pages/model_recetas.dart';
+import 'package:flutter_application_2/model_recetas.dart';
 
 const carruselImages = <Receta>[
   Receta(

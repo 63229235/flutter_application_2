@@ -1,22 +1,20 @@
-// ignore_for_file: unused_import, library_private_types_in_public_api, prefer_const_constructors, avoid_print
+// ignore_for_file: unused_import, prefer_const_constructors, library_private_types_in_public_api, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/afiliar.dart';
-import 'package:flutter_application_2/pages/avance.dart';
-import 'package:flutter_application_2/pages/opci.dart';
-import 'package:flutter_application_2/pages/registro.dart';
-import 'package:flutter_application_2/pages/seguridad.dart';
+import 'package:flutter_application_2/avance.dart';
+import 'package:flutter_application_2/perfil.dart';
+import 'package:flutter_application_2/registro.dart';
 
-class Perfil extends StatefulWidget {
-  const Perfil({Key? key}) : super(key: key);
+class MyAppForm extends StatefulWidget {
+  const MyAppForm({Key? key}) : super(key: key);
 
   @override
-  _PerfilState createState() => _PerfilState();
+  _MyAppFormState createState() => _MyAppFormState();
 }
 
-class _PerfilState extends State<Perfil> {
+class _MyAppFormState extends State<MyAppForm> {
   late String _name;
-  late String _ubicacion;
+  late String _email;
   late String _password;
 
   @override
@@ -35,14 +33,14 @@ class _PerfilState extends State<Perfil> {
               CircleAvatar(
                 radius: 100.0,
                 backgroundColor: Colors.transparent,
-                backgroundImage: AssetImage('images/perfil.png'),
+                backgroundImage: AssetImage('images/Logo-Project.png'),
               ),
               Text(
-                'PERFIL',
+                'INICIAR SESION',
                 style: TextStyle(
                     fontFamily: 'NerkoOne',
                     fontSize: 50.0,
-                    color: Color.fromRGBO(239, 126, 12, 1)),
+                    color: Color.fromARGB(255, 239, 126, 12)),
               ),
               SizedBox(
                 width: 160.0,
@@ -64,25 +62,22 @@ class _PerfilState extends State<Perfil> {
                         borderRadius: BorderRadius.circular(20.0))),
                 onSubmitted: (valor) {
                   _name = valor;
-                  print('El nombre es $_ubicacion');
+                  print('El nombre es $_name');
                 },
               ),
               Divider(
                 height: 20.0,
               ),
               TextField(
-                enableInteractiveSelection: false,
-                autofocus: true,
-                textCapitalization: TextCapitalization.characters,
                 decoration: InputDecoration(
-                    hintText: 'Distrito',
-                    labelText: 'Ingrese su Distrito',
-                    suffixIcon: Icon(Icons.add_location),
+                    hintText: 'Email',
+                    labelText: 'Email',
+                    suffixIcon: Icon(Icons.alternate_email),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0))),
                 onSubmitted: (valor) {
-                  _name = valor;
-                  print('El nombre es $_name');
+                  _email = valor;
+                  print('El email es $_email');
                 },
               ),
               Divider(
@@ -108,11 +103,11 @@ class _PerfilState extends State<Perfil> {
               SizedBox(
                 child: TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Mydasa()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => BakeryOptionsScreen()));
                   },
                   child: Text(
-                    'Guardar Cambios',
+                    'Ingresar',
                     style: TextStyle(
                         color: Color.fromARGB(179, 243, 125, 7),
                         fontSize: 30.0,
@@ -122,6 +117,21 @@ class _PerfilState extends State<Perfil> {
               ),
               Divider(
                 height: 18.0,
+              ),
+              SizedBox(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Registro()));
+                  },
+                  child: Text(
+                    'Registrate',
+                    style: TextStyle(
+                        color: Color.fromARGB(179, 243, 125, 7),
+                        fontSize: 23.0,
+                        fontFamily: 'NerkoOne'),
+                  ),
+                ),
               ),
             ],
           )

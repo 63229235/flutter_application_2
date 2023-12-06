@@ -1,9 +1,9 @@
 // ignore_for_file: unused_import, prefer_const_constructors, library_private_types_in_public_api, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/avance.dart';
-import 'package:flutter_application_2/pages/perfil.dart';
-import 'package:flutter_application_2/pages/registro.dart';
+import 'package:flutter_application_2/avance.dart';
+import 'package:flutter_application_2/perfil.dart';
+import 'package:flutter_application_2/registro.dart';
 
 class Afiliologin extends StatefulWidget {
   const Afiliologin({Key? key}) : super(key: key);

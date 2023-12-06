@@ -1,10 +1,10 @@
-// ignore_for_file: prefer_const_constructors, deprecated_member_use, use_key_in_widget_constructors, camel_case_types
+// ignore_for_file: prefer_const_constructors, file_names, deprecated_member_use, use_key_in_widget_constructors, camel_case_types
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/afiliar.dart';
-import 'package:flutter_application_2/pages/loginafilio.dart';
+import 'package:flutter_application_2/login.dart';
+import 'package:flutter_application_2/registro.dart';
 
-class afilio extends StatelessWidget {
+class login1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +34,7 @@ class afilio extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Afiliologin()));
+                        MaterialPageRoute(builder: (context) => MyAppForm()));
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.orange,
@@ -47,8 +47,8 @@ class afilio extends StatelessWidget {
                 SizedBox(height: 15),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => LocalRegistrationScreen()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Registro()));
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.green,
@@ -56,7 +56,7 @@ class afilio extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     textStyle: TextStyle(fontSize: 18),
                   ),
-                  child: Text("Afiliar local"),
+                  child: Text("Registrase"),
                 ),
               ],
             ),

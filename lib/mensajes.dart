@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/opci.dart';
+import 'package:flutter_application_2/opci.dart';
+import 'package:flutter_application_2/opciones.dart';
 
 class Msjs extends StatelessWidget {
   @override
@@ -30,8 +31,8 @@ class _MyChatScreenState extends State<MyChatScreen> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => Mydasa()));
+            Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => Mydasa()));
           },
         ),
       ),
@@ -144,3 +145,5 @@ class Message {
 
   Message({required this.text, required this.isMe});
 }
+
+

@@ -1,7 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/avance.dart';
+import 'package:flutter_application_2/avance.dart';
 
 class MyApp extends StatelessWidget {
   @override

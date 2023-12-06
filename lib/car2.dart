@@ -1,12 +1,14 @@
-import 'package:flutter_application_2/pages/colors_filters.dart';
+import 'package:flutter_application_2/colors_filters.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/tendencias.dart';
+import 'package:flutter_application_2/avance.dart';
 
-class car3 extends StatefulWidget {
+class car2 extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
 }
 
-class _MainPageState extends State<car3> {
+class _MainPageState extends State<car2> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(

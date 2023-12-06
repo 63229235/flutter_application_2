@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/model_recetas.dart';
+import 'package:flutter_application_2/avance.dart';
+import 'package:flutter_application_2/model_recetas.dart';
 
 class MostrarReceta extends StatelessWidget {
   final Receta carruselImages;
