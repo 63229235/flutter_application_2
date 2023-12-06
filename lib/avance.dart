@@ -10,6 +10,7 @@ import 'package:flutter_application_2/nosotros.dart';
 import 'package:flutter_application_2/opci.dart';
 import 'package:flutter_application_2/opciones.dart';
 import 'package:flutter_application_2/promociones.dart';
+import 'package:flutter_application_2/soporte.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class BakeryApp extends StatelessWidget {
@@ -123,7 +124,10 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
              ListTile(
               leading: Icon(Icons.contact_support),
               title: Text('Soporte'),
-              onTap: () {},
+              onTap: () {
+                Route route = MaterialPageRoute(builder: (_) => Soport());
+                Navigator.push(context, route);
+              },
             ),
           ],
         ),
