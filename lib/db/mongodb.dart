@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_application_2/db/constant.dart';
 import 'package:mongo_dart/mongo_dart.dart';
 
@@ -8,7 +6,6 @@ class MongoDatabase {
   static connect() async {
     db = await Db.create(MONGO_CONN_URL);
     await db.open();
-    inspect(db);
     userCollection = db.collection(USER_COLLECTION);
   }
 }
