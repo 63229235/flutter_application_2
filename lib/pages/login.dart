@@ -1,16 +1,18 @@
-// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors, avoid_print
+// ignore_for_file: unused_import, prefer_const_constructors, library_private_types_in_public_api, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/login.dart';
+import 'package:flutter_application_2/pages/avance.dart';
+import 'package:flutter_application_2/pages/perfil.dart';
+import 'package:flutter_application_2/pages/registro.dart';
 
-class Registro extends StatefulWidget {
-  const Registro({Key? key}) : super(key: key);
+class MyAppForm extends StatefulWidget {
+  const MyAppForm({Key? key}) : super(key: key);
 
   @override
-  _MyAppResState createState() => _MyAppResState();
+  _MyAppFormState createState() => _MyAppFormState();
 }
 
-class _MyAppResState extends State<Registro> {
+class _MyAppFormState extends State<MyAppForm> {
   late String _name;
   late String _email;
   late String _password;
@@ -34,7 +36,7 @@ class _MyAppResState extends State<Registro> {
                 backgroundImage: AssetImage('images/Logo-Project.png'),
               ),
               Text(
-                'CREAR CUENTA',
+                'INICIAR SESION',
                 style: TextStyle(
                     fontFamily: 'NerkoOne',
                     fontSize: 50.0,
@@ -54,7 +56,7 @@ class _MyAppResState extends State<Registro> {
                 textCapitalization: TextCapitalization.characters,
                 decoration: InputDecoration(
                     hintText: 'USER-NAME',
-                    labelText: 'Ingrese un usuario',
+                    labelText: 'User name',
                     suffixIcon: Icon(Icons.verified_user),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0))),
@@ -69,7 +71,7 @@ class _MyAppResState extends State<Registro> {
               TextField(
                 decoration: InputDecoration(
                     hintText: 'Email',
-                    labelText: 'Ingrese su Email',
+                    labelText: 'Email',
                     suffixIcon: Icon(Icons.alternate_email),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0))),
@@ -86,7 +88,7 @@ class _MyAppResState extends State<Registro> {
                 obscureText: true,
                 decoration: InputDecoration(
                     hintText: 'Password',
-                    labelText: 'Cree su Password',
+                    labelText: 'Password',
                     suffixIcon: Icon(Icons.lock_outline),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0))),
@@ -101,11 +103,11 @@ class _MyAppResState extends State<Registro> {
               SizedBox(
                 child: TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => (MyAppForm())));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => BakeryOptionsScreen()));
                   },
                   child: Text(
-                    'Crear cuenta',
+                    'Ingresar',
                     style: TextStyle(
                         color: Color.fromARGB(179, 243, 125, 7),
                         fontSize: 30.0,
@@ -120,10 +122,10 @@ class _MyAppResState extends State<Registro> {
                 child: TextButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => MyAppForm()));
+                        MaterialPageRoute(builder: (context) => Registro()));
                   },
                   child: Text(
-                    'Iniciar sesion',
+                    'Registrate',
                     style: TextStyle(
                         color: Color.fromARGB(179, 243, 125, 7),
                         fontSize: 23.0,

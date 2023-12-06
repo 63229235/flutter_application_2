@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, file_names, deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/2.dart';
-import 'package:flutter_application_2/afilio.dart';
+import 'package:flutter_application_2/pages/2.dart';
+import 'package:flutter_application_2/pages/afilio.dart';
 
 void main() {
   runApp(MaterialApp(

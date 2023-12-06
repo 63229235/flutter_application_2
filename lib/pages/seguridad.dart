@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/opci.dart';
-import 'package:flutter_application_2/opciones.dart';
+import 'package:flutter_application_2/pages/opci.dart';
 import 'package:permission_handler/permission_handler.dart';
-
 
 class Mysegu extends StatelessWidget {
   @override
@@ -11,7 +9,8 @@ class Mysegu extends StatelessWidget {
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.black, // Establecer el fondo de la aplicación a negro
+        scaffoldBackgroundColor:
+            Colors.black, // Establecer el fondo de la aplicación a negro
       ),
     );
   }
@@ -70,8 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => Mydasa()));
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => Mydasa()));
           },
         ),
       ),
@@ -86,7 +85,9 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 350,
               height: 50,
               color: Colors.black, // Color del primer contenedor
-              padding: EdgeInsets.symmetric(horizontal: 20.0), // Ajustar el espacio interno alrededor del texto
+              padding: EdgeInsets.symmetric(
+                  horizontal:
+                      20.0), // Ajustar el espacio interno alrededor del texto
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black, // Color del botón (negro)
@@ -99,7 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'Actividades realizadas ',
                     maxLines: 1, // Establecer el texto a una sola línea
-                    overflow: TextOverflow.ellipsis, // Mostrar puntos suspensivos (...) si el texto es muy largo
+                    overflow: TextOverflow
+                        .ellipsis, // Mostrar puntos suspensivos (...) si el texto es muy largo
                     style: TextStyle(
                       color: Colors.white, // Color del texto en el botón
                     ),
@@ -112,7 +114,9 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 350,
               height: 50,
               color: Colors.black, // Color del segundo contenedor
-              padding: EdgeInsets.symmetric(horizontal: 20.0), // Ajustar el espacio interno alrededor del texto
+              padding: EdgeInsets.symmetric(
+                  horizontal:
+                      20.0), // Ajustar el espacio interno alrededor del texto
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black, // Color del botón (negro)
@@ -125,7 +129,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'Historial de compras',
                     maxLines: 1, // Establecer el texto a una sola línea
-                    overflow: TextOverflow.ellipsis, // Mostrar puntos suspensivos (...) si el texto es muy largo
+                    overflow: TextOverflow
+                        .ellipsis, // Mostrar puntos suspensivos (...) si el texto es muy largo
                     style: TextStyle(
                       color: Colors.white, // Color del texto en el botón
                     ),

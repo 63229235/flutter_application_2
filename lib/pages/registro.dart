@@ -1,22 +1,18 @@
-// ignore_for_file: unused_import, library_private_types_in_public_api, prefer_const_constructors, avoid_print
+// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/afiliar.dart';
-import 'package:flutter_application_2/avance.dart';
-import 'package:flutter_application_2/opci.dart';
-import 'package:flutter_application_2/registro.dart';
-import 'package:flutter_application_2/seguridad.dart';
+import 'package:flutter_application_2/pages/login.dart';
 
-class Perfil extends StatefulWidget {
-  const Perfil({Key? key}) : super(key: key);
+class Registro extends StatefulWidget {
+  const Registro({Key? key}) : super(key: key);
 
   @override
-  _PerfilState createState() => _PerfilState();
+  _MyAppResState createState() => _MyAppResState();
 }
 
-class _PerfilState extends State<Perfil> {
+class _MyAppResState extends State<Registro> {
   late String _name;
-  late String _ubicacion;
+  late String _email;
   late String _password;
 
   @override
@@ -35,14 +31,14 @@ class _PerfilState extends State<Perfil> {
               CircleAvatar(
                 radius: 100.0,
                 backgroundColor: Colors.transparent,
-                backgroundImage: AssetImage('images/perfil.png'),
+                backgroundImage: AssetImage('images/Logo-Project.png'),
               ),
               Text(
-                'PERFIL',
+                'CREAR CUENTA',
                 style: TextStyle(
                     fontFamily: 'NerkoOne',
                     fontSize: 50.0,
-                    color: Color.fromRGBO(239, 126, 12, 1)),
+                    color: Color.fromARGB(255, 239, 126, 12)),
               ),
               SizedBox(
                 width: 160.0,
@@ -58,26 +54,8 @@ class _PerfilState extends State<Perfil> {
                 textCapitalization: TextCapitalization.characters,
                 decoration: InputDecoration(
                     hintText: 'USER-NAME',
-                    labelText: 'User name',
+                    labelText: 'Ingrese un usuario',
                     suffixIcon: Icon(Icons.verified_user),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0))),
-                onSubmitted: (valor) {
-                  _name = valor;
-                  print('El nombre es $_ubicacion');
-                },
-              ),
-              Divider(
-                height: 20.0,
-              ),
-              TextField(
-                enableInteractiveSelection: false,
-                autofocus: true,
-                textCapitalization: TextCapitalization.characters,
-                decoration: InputDecoration(
-                    hintText: 'Distrito',
-                    labelText: 'Ingrese su Distrito',
-                    suffixIcon: Icon(Icons.add_location),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0))),
                 onSubmitted: (valor) {
@@ -89,11 +67,26 @@ class _PerfilState extends State<Perfil> {
                 height: 20.0,
               ),
               TextField(
+                decoration: InputDecoration(
+                    hintText: 'Email',
+                    labelText: 'Ingrese su Email',
+                    suffixIcon: Icon(Icons.alternate_email),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0))),
+                onSubmitted: (valor) {
+                  _email = valor;
+                  print('El email es $_email');
+                },
+              ),
+              Divider(
+                height: 20.0,
+              ),
+              TextField(
                 enableInteractiveSelection: false,
                 obscureText: true,
                 decoration: InputDecoration(
                     hintText: 'Password',
-                    labelText: 'Password',
+                    labelText: 'Cree su Password',
                     suffixIcon: Icon(Icons.lock_outline),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0))),
@@ -109,10 +102,10 @@ class _PerfilState extends State<Perfil> {
                 child: TextButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Mydasa()));
+                        MaterialPageRoute(builder: (context) => (MyAppForm())));
                   },
                   child: Text(
-                    'Guardar Cambios',
+                    'Crear cuenta',
                     style: TextStyle(
                         color: Color.fromARGB(179, 243, 125, 7),
                         fontSize: 30.0,
@@ -122,6 +115,21 @@ class _PerfilState extends State<Perfil> {
               ),
               Divider(
                 height: 18.0,
+              ),
+              SizedBox(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => MyAppForm()));
+                  },
+                  child: Text(
+                    'Iniciar sesion',
+                    style: TextStyle(
+                        color: Color.fromARGB(179, 243, 125, 7),
+                        fontSize: 23.0,
+                        fontFamily: 'NerkoOne'),
+                  ),
+                ),
               ),
             ],
           )

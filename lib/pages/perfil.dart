@@ -1,20 +1,22 @@
-// ignore_for_file: unused_import, prefer_const_constructors, library_private_types_in_public_api, avoid_print
+// ignore_for_file: unused_import, library_private_types_in_public_api, prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/avance.dart';
-import 'package:flutter_application_2/perfil.dart';
-import 'package:flutter_application_2/registro.dart';
+import 'package:flutter_application_2/pages/afiliar.dart';
+import 'package:flutter_application_2/pages/avance.dart';
+import 'package:flutter_application_2/pages/opci.dart';
+import 'package:flutter_application_2/pages/registro.dart';
+import 'package:flutter_application_2/pages/seguridad.dart';
 
-class MyAppForm extends StatefulWidget {
-  const MyAppForm({Key? key}) : super(key: key);
+class Perfil extends StatefulWidget {
+  const Perfil({Key? key}) : super(key: key);
 
   @override
-  _MyAppFormState createState() => _MyAppFormState();
+  _PerfilState createState() => _PerfilState();
 }
 
-class _MyAppFormState extends State<MyAppForm> {
+class _PerfilState extends State<Perfil> {
   late String _name;
-  late String _email;
+  late String _ubicacion;
   late String _password;
 
   @override
@@ -33,14 +35,14 @@ class _MyAppFormState extends State<MyAppForm> {
               CircleAvatar(
                 radius: 100.0,
                 backgroundColor: Colors.transparent,
-                backgroundImage: AssetImage('images/Logo-Project.png'),
+                backgroundImage: AssetImage('images/perfil.png'),
               ),
               Text(
-                'INICIAR SESION',
+                'PERFIL',
                 style: TextStyle(
                     fontFamily: 'NerkoOne',
                     fontSize: 50.0,
-                    color: Color.fromARGB(255, 239, 126, 12)),
+                    color: Color.fromRGBO(239, 126, 12, 1)),
               ),
               SizedBox(
                 width: 160.0,
@@ -62,22 +64,25 @@ class _MyAppFormState extends State<MyAppForm> {
                         borderRadius: BorderRadius.circular(20.0))),
                 onSubmitted: (valor) {
                   _name = valor;
-                  print('El nombre es $_name');
+                  print('El nombre es $_ubicacion');
                 },
               ),
               Divider(
                 height: 20.0,
               ),
               TextField(
+                enableInteractiveSelection: false,
+                autofocus: true,
+                textCapitalization: TextCapitalization.characters,
                 decoration: InputDecoration(
-                    hintText: 'Email',
-                    labelText: 'Email',
-                    suffixIcon: Icon(Icons.alternate_email),
+                    hintText: 'Distrito',
+                    labelText: 'Ingrese su Distrito',
+                    suffixIcon: Icon(Icons.add_location),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0))),
                 onSubmitted: (valor) {
-                  _email = valor;
-                  print('El email es $_email');
+                  _name = valor;
+                  print('El nombre es $_name');
                 },
               ),
               Divider(
@@ -103,11 +108,11 @@ class _MyAppFormState extends State<MyAppForm> {
               SizedBox(
                 child: TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => BakeryOptionsScreen()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Mydasa()));
                   },
                   child: Text(
-                    'Ingresar',
+                    'Guardar Cambios',
                     style: TextStyle(
                         color: Color.fromARGB(179, 243, 125, 7),
                         fontSize: 30.0,
@@ -117,21 +122,6 @@ class _MyAppFormState extends State<MyAppForm> {
               ),
               Divider(
                 height: 18.0,
-              ),
-              SizedBox(
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Registro()));
-                  },
-                  child: Text(
-                    'Registrate',
-                    style: TextStyle(
-                        color: Color.fromARGB(179, 243, 125, 7),
-                        fontSize: 23.0,
-                        fontFamily: 'NerkoOne'),
-                  ),
-                ),
               ),
             ],
           )

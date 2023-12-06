@@ -1,10 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_application_2/recetas_data.dart';
-import 'package:flutter_application_2/model_recetas.dart';
-import 'package:flutter_application_2/mostrar_receta.dart';
-import 'package:flutter_application_2/carousel_page.dart';
+import 'package:flutter_application_2/pages/recetas_data.dart';
+import 'package:flutter_application_2/pages/model_recetas.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/model_recetas.dart';
 import 'package:flutter_application_2/catalogo/Catalago.dart';
 
 class Carousel extends StatefulWidget {
