@@ -12,6 +12,37 @@ class MyOpcioness extends StatelessWidget {
     return MaterialApp(
       home: MyHome(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Color(0xFFE6B08B),
+          colorScheme: ColorScheme.light(
+            primary: Color(0xFFE6B08B),
+            secondary: Colors.white,
+          ),
+        appBarTheme: AppBarTheme(
+          elevation: 4,
+        ),
+        textTheme: TextTheme(
+          headline6: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+          subtitle1: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+            color: Colors.black87,
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: Color(0xFFE6B08B),
+            onPrimary: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -26,60 +57,48 @@ class _HomePageState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Promos Panaderias'),
-        backgroundColor: Color(0xFFE6B08B),
-        // Añadir un ícono de flecha de retroceso en la parte superior izquierda
+        title: Text('Promociones de Panaderías'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => BakeryApp(),
-              ),
-            );
+            Navigator.of(context).pop();
           },
         ),
       ),
       body: Container(
-        child: Scaffold(
-          body: Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: <Color>[
-                  const Color(0xFFE6B08B),
-                  const Color(0x00EF5350),
-                ],
-                begin: Alignment.topCenter,
-              ),
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFFE6B08B),
+              Color(0xFFC08457),
+            ],
+            begin: Alignment.topCenter,
+          ),
+        ),
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 20.0),
+            Text(
+              '¡Aprovecha las promociones con un 30% de descuento en las tiendas mostradas!',
+              style: Theme.of(context).textTheme.headline6,
+              textAlign: TextAlign.center,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: Text(
-                    'Aprovecha las promociones de 30% de descuento en las tiendas mostradas',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.symmetric(
+                  vertical: 16.0,
                 ),
-                Expanded(
-                  child: ListView(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 40.0,
-                      vertical: 16.0,
-                    ),
+                children: [
+                  Stack(
                     children: [
                       ImageSlideshow(
                         width: double.infinity,
                         height: 200,
-                        initialPage: 0,
-                        indicatorColor: const Color(0xFFE6B08B),
+                        indicatorColor: Colors.white,
                         indicatorBackgroundColor: Colors.grey,
                         children: [
                           Image.asset(
@@ -101,29 +120,40 @@ class _HomePageState extends State<MyHome> {
                         autoPlayInterval: 3000,
                         isLoop: true,
                       ),
-                      const SizedBox(height: 16),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          MyCombinedContainer(
-                            imagePath: 'assets/images/34.jpg',
-                            buttonText: ' bakery Agregada tu panaderia favorita',
-                            bottomText: 'Venezolana',
+                      Positioned(
+                        top: 20,
+                        left: 20,
+                        child: Text(
+                          '2x1 Compre',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
-                          MyCombinedContainer(
-                            imagePath: 'assets/images/19.jpg',
-                            buttonText:
-                                'Panaderia Rosa Agregada a tu panaderia favorita',
-                            bottomText: 'Miraflores',
-                          ),
-                        ],
+                        ),
                       ),
                     ],
                   ),
-                ),
-              ],
+                  const SizedBox(height: 16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      MyCombinedContainer(
+                        imagePath: 'assets/images/34.jpg',
+                        buttonText: 'Agregar a favoritos',
+                        bottomText: 'Panadería Venezolana',
+                      ),
+                      MyCombinedContainer(
+                        imagePath: 'assets/images/19.jpg',
+                        buttonText: 'Agregar a favoritos',
+                        bottomText: 'Panadería Miraflores',
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
@@ -147,23 +177,30 @@ class MyCombinedContainer extends StatelessWidget {
       width: 200,
       height: 200,
       decoration: BoxDecoration(
-        color: Colors.blue,
-        borderRadius: BorderRadius.circular(24),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            blurRadius: 5,
+            offset: Offset(0, 3),
+          ),
+        ],
       ),
       child: Stack(
         children: [
-          Positioned.fill(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(24),
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.cover,
-              ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Image.asset(
+              imagePath,
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover,
             ),
           ),
           Positioned(
-            top: 20,
-            right: 20,
+            top: 12,
+            right: 12,
             child: ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -173,27 +210,18 @@ class MyCombinedContainer extends StatelessWidget {
                   ),
                 );
               },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.transparent,
-                onPrimary: Colors.transparent,
-              ),
               child: Icon(
-                Icons.add,
+                Icons.favorite,
                 size: 24,
-                color: Colors.black,
               ),
             ),
           ),
           Positioned(
-            bottom: 20,
-            left: 20,
+            bottom: 12,
+            left: 12,
             child: Text(
               bottomText,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                color: Colors.black,
-              ),
+              style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
         ],
@@ -201,4 +229,14 @@ class MyCombinedContainer extends StatelessWidget {
     );
   }
 }
+
+
+
+
+            
+
+
+             
+
+
 
