@@ -95,17 +95,12 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
             ),
             Divider(),
             ListTile(
-              leading: Icon(Icons.info),
-              title: Text('Acerca de Nosotros'),
-              onTap: () {},
-            ),
-            ListTile(
               leading: Icon(Icons.contact_support),
-              title: Text('Soporte'),
+              title: Text('NOSE'),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(Icons.shop_2_outlined),
+              leading: Icon(Icons.shop),
               title: Text('Tiendas'),
               onTap: () {
                 Route route = MaterialPageRoute(builder: (_) => NCarrusel());
@@ -113,12 +108,22 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.contact_support),
-              title: Text('Promo'),
+              leading: Icon(Icons.breakfast_dining),
+              title: Text('Promocioness'),
               onTap: () {
                 Route route = MaterialPageRoute(builder: (_) => MyOpcioness());
                 Navigator.push(context, route);
               },
+            ),      
+            ListTile(
+              leading: Icon(Icons.info),
+              title: Text('Acerca de Nosotros'),
+              onTap: () {},
+            ),
+             ListTile(
+              leading: Icon(Icons.contact_support),
+              title: Text('Soporte'),
+              onTap: () {},
             ),
           ],
         ),
