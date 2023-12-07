@@ -122,7 +122,7 @@ class _MainPageState extends State<card1> {
           children: [
             Ink.image(
               image: NetworkImage(
-                  'https://images.pexels.com/photos/18984929/pexels-photo-18984929/free-photo-of-calle-acera-panaderia-tienda.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                  'https://images.pexels.com/photos/1653702/pexels-photo-1653702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
               colorFilter: ColorFilters.greyscale,
               child: InkWell(
                 onTap: () {},
@@ -153,7 +153,7 @@ class _MainPageState extends State<card1> {
               children: [
                 Ink.image(
                   image: NetworkImage(
-                      'https://images.pexels.com/photos/18984929/pexels-photo-18984929/free-photo-of-calle-acera-panaderia-tienda.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                      'https://images.pexels.com/photos/1653702/pexels-photo-1653702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
                   height: 240,
                   fit: BoxFit.cover,
                 ),
