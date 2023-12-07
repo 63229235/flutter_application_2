@@ -5,10 +5,17 @@ import 'package:provider/provider.dart';
 
 class Mapa extends StatelessWidget {
   const Mapa({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<HomeController>(
-      create: (_) => HomeController(),
+      create: (_) {
+        final controller = HomeController();
+        controller.onMarkerTap.listen((String id) {
+          print("got to $id");
+        });
+        return controller;
+      },
       child: Scaffold(
           body: Consumer<HomeController>(
         builder: (_, controller, __) => GoogleMap(
