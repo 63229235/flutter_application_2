@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/avance.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 
-
 class Soport extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -47,16 +46,16 @@ class _ContactScreenState extends State<ContactScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Contacto'),
-        backgroundColor: Color(0xFFE6B08B),  // Establece el color de fondo aquí
+        backgroundColor: Color(0xFFE6B08B), // Establece el color de fondo aquí
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-         onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => BakeryApp(),
-                ),
-              );
-            },
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => BakeryApp(),
+              ),
+            );
+          },
         ),
       ),
       body: Padding(
