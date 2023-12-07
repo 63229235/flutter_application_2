@@ -61,8 +61,12 @@ class _HomePageState extends State<MyHome> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).pop();
-          },
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => BakeryApp(),
+                ),
+              );
+            },
         ),
       ),
       body: Container(
@@ -120,18 +124,7 @@ class _HomePageState extends State<MyHome> {
                         autoPlayInterval: 3000,
                         isLoop: true,
                       ),
-                      Positioned(
-                        top: 20,
-                        left: 20,
-                        child: Text(
-                          '2x1 Compre',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
+                     
                     ],
                   ),
                   const SizedBox(height: 16),
