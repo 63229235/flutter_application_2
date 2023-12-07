@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/opciones.dart';
-
+import 'package:flutter_application_2/opci.dart';
+import 'package:flutter_application_2/car1.dart';
+import 'package:flutter_application_2/car2.dart';
+import 'package:flutter_application_2/car3.dart';
+import 'package:flutter_application_2/car4.dart';
+import 'package:flutter_application_2/opci.dart';
+import 'package:flutter_application_2/seguridad.dart';
 
 
 class MyTe extends StatelessWidget {
@@ -22,9 +27,10 @@ class MyTrendsScreen extends StatelessWidget {
         backgroundColor: Color(0xFFE6B08B),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-       onPressed: () {
+          onPressed: () {
             Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => MyOpciones()));
+              MaterialPageRoute(builder: (context) => Mydasa()),
+            );
           },
         ),
       ),
@@ -35,11 +41,11 @@ class MyTrendsScreen extends StatelessWidget {
 
 class TrendList extends StatelessWidget {
   final List<String> trendingBakeries = [
-    'Panadería Dota',
-    'Dulces DYRROTH',
-    'EL DOMINGO FINAL DE LOL',
+    'Panadería Bakey',
+    'Panaderia Dulce',
+    'El panadero cerca a tu hogar',
     'Rincón del Pan',
-    'PasE FLUTTER',
+    
   ];
 
   @override
@@ -47,7 +53,7 @@ class TrendList extends StatelessWidget {
     return ListView.builder(
       itemCount: trendingBakeries.length,
       itemBuilder: (context, index) {
-        return TrendCard(bakeryName: trendingBakeries[index]);
+        return TrendCard(bakeryName: trendingBakeries[index], index: index);
       },
     );
   }
@@ -55,22 +61,51 @@ class TrendList extends StatelessWidget {
 
 class TrendCard extends StatelessWidget {
   final String bakeryName;
+  final int index;
 
-  TrendCard({required this.bakeryName});
+  TrendCard({required this.bakeryName, required this.index});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 3,
-      margin: EdgeInsets.all(10),
-      child: ListTile(
-        leading: Icon(Icons.local_cafe),
-        title: Text(bakeryName),
-        subtitle: Text('Descubre las delicias de ${bakeryName.toLowerCase()}'),
-        onTap: () {
-          // Agrega aquí la lógica para manejar el clic en la panadería específica
-          print('Clic en ${bakeryName}');
-        },
+    return GestureDetector(
+      onTap: () {
+        // Redirigir a una ventana diferente según el índice
+        switch (index) {
+          case 0:
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => card1()),
+            );
+            break;
+          case 1:
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => car2()),
+            );
+            break;
+          case 2:
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => car3()),
+            );
+          case 3:
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => car4()),
+            );  
+
+          default:
+        }
+      },
+      child: Card(
+        elevation: 3,
+        margin: EdgeInsets.all(10),
+        child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.local_cafe),
+              title: Text(bakeryName),
+              subtitle: Text('Descubre las delicias de ${bakeryName.toLowerCase()}'),
+            ),
+            SizedBox(height: 10),
+          ],
+        ),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/opci.dart';
 import 'package:flutter_application_2/opciones.dart';
 
 class Msjs extends StatelessWidget {
@@ -31,7 +32,7 @@ class _MyChatScreenState extends State<MyChatScreen> {
           icon: Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => MyOpciones()));
+            MaterialPageRoute(builder: (context) => Mydasa()));
           },
         ),
       ),
