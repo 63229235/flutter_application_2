@@ -39,8 +39,11 @@ dependencies:
   flutter_image_slideshow: ^0.1.6
   permission_handler: ^11.0.1
   flutter_local_notifications: ^8.0.0
+<<<<<<< HEAD
   provider: ^6.1.1
   flutter_email_sender: ^6.0.2
+=======
+>>>>>>> parent of 360aa85 (SOPORTE)
 
 dev_dependencies:
   flutter_test:
