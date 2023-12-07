@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/afiliar.dart';
 import 'package:flutter_application_2/avance.dart';
+import 'package:flutter_application_2/opci.dart';
 import 'package:flutter_application_2/registro.dart';
+import 'package:flutter_application_2/seguridad.dart';
 
 class Perfil extends StatefulWidget {
   const Perfil({Key? key}) : super(key: key);
@@ -107,7 +109,7 @@ class _PerfilState extends State<Perfil> {
                 child: TextButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => MyApp()));
+                        MaterialPageRoute(builder: (context) => Mydasa()));
                   },
                   child: Text(
                     'Guardar Cambios',
