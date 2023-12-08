@@ -115,19 +115,15 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
                 Route route = MaterialPageRoute(builder: (_) => MyOpcioness());
                 Navigator.push(context, route);
               },
-            ),      
+            ),
             ListTile(
               leading: Icon(Icons.info),
               title: Text('Acerca de Nosotros'),
               onTap: () {},
             ),
-             ListTile(
+            ListTile(
               leading: Icon(Icons.contact_support),
               title: Text('Soporte'),
-              onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => Soport());
-                Navigator.push(context, route);
-              },
             ),
           ],
         ),
