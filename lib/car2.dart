@@ -21,7 +21,7 @@ class _MainPageState extends State<car2> {
             buildQuoteCard(),
             //buildColoredCard(),
             //buildImageCard(),
-            //buildRoundedCard(),
+            buildRoundedCard(),
             buildImageInteractionCard(),
           ],
         ),
@@ -37,7 +37,7 @@ class _MainPageState extends State<car2> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Rounded card',
+                'La puedes ubicar en el distrito de  Miraflores',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class _MainPageState extends State<car2> {
               ),
               const SizedBox(height: 4),
               Text(
-                'This card is rounded',
+                'Te esperamos',
                 style: TextStyle(fontSize: 20),
               ),
             ],
@@ -59,7 +59,7 @@ class _MainPageState extends State<car2> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Panaderia/pasteleria Bucky',
+                'Panaderia y Pasteeleria Don Mamino.',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               Text(
@@ -118,11 +118,11 @@ class _MainPageState extends State<car2> {
           borderRadius: BorderRadius.circular(24),
         ),
         child: Stack(
-          alignment: Alignment.center,
+          alignment: Alignment.topCenter,
           children: [
             Ink.image(
               image: NetworkImage(
-                  'https://images.pexels.com/photos/18984929/pexels-photo-18984929/free-photo-of-calle-acera-panaderia-tienda.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                  'https://media-cdn.tripadvisor.com/media/photo-s/03/f6/bf/1e/don-mamino.jpg'),
               colorFilter: ColorFilters.greyscale,
               child: InkWell(
                 onTap: () {},
@@ -153,7 +153,7 @@ class _MainPageState extends State<car2> {
               children: [
                 Ink.image(
                   image: NetworkImage(
-                      'https://images.pexels.com/photos/18984929/pexels-photo-18984929/free-photo-of-calle-acera-panaderia-tienda.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                      'https://media-cdn.tripadvisor.com/media/photo-s/03/f6/bf/1e/don-mamino.jpg'),
                   height: 240,
                   fit: BoxFit.cover,
                 ),
@@ -162,7 +162,7 @@ class _MainPageState extends State<car2> {
                   right: 16,
                   left: 16,
                   child: Text(
-                    'Backe med pasie',
+                    'Don Mamino',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,

@@ -33,20 +33,7 @@ class MyTrendsScreen extends StatelessWidget {
           },
         ),
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: <Color>[
-              const Color(0xFFE6B08B),
-              const Color(0x00EF5350),
-            ],
-            begin: Alignment.topCenter,
-          ),
-        ),
-        child: TrendList(),
-      ),
+      body: TrendList(),
     );
   }
 }
@@ -54,7 +41,7 @@ class MyTrendsScreen extends StatelessWidget {
 class TrendList extends StatelessWidget {
   final List<String> trendingBakeries = [
     'Panadería Bakey',
-    'Panaderia Dulce',
+    'Panaderia Don Mamino',
     'El panadero cerca a tu hogar',
     'Rincón del Pan',
   ];
@@ -96,12 +83,11 @@ class TrendCard extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => car3()),
             );
-            break;
           case 3:
             Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => car4()),
             );
-            break;
+
           default:
         }
       },
@@ -111,9 +97,10 @@ class TrendCard extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
-              leading: Icon(Icons.local_cafe),
+              leading: Icon(Icons.local_restaurant_rounded),
               title: Text(bakeryName),
-              subtitle: Text('Descubre las delicias de ${bakeryName.toLowerCase()}'),
+              subtitle:
+                  Text('Descubre las delicias de ${bakeryName.toLowerCase()}'),
             ),
             SizedBox(height: 10),
           ],
@@ -122,5 +109,3 @@ class TrendCard extends StatelessWidget {
     );
   }
 }
-
-
