@@ -21,8 +21,8 @@ class _MainPageState extends State<car3> {
             buildQuoteCard(),
             //buildColoredCard(),
             //buildImageCard(),
-            //buildRoundedCard(),
             buildImageInteractionCard(),
+            buildRoundedCard(),
           ],
         ),
       );
@@ -37,7 +37,7 @@ class _MainPageState extends State<car3> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Rounded card',
+                'Abierto: Lun-Dom 8:00-22:00',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class _MainPageState extends State<car3> {
               ),
               const SizedBox(height: 4),
               Text(
-                'This card is rounded',
+                'Numero para Pedidos: 987-482-234',
                 style: TextStyle(fontSize: 20),
               ),
             ],
@@ -59,11 +59,11 @@ class _MainPageState extends State<car3> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Panaderia/pasteleria Bucky',
+                'Panaderia Pasteleria San Antonio',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               Text(
-                'Esta es unapequeña panaderia-pasteleria que realiza deliciosos preparados desde el año 1899, animate a probarlos',
+                'Esta es un panaderia muy reconocida en el distrito de miraflores, su buen sabor hizo que todos sus clientes la recomendaran',
                 style: TextStyle(fontSize: 24),
               ),
               const SizedBox(height: 12),
@@ -153,7 +153,7 @@ class _MainPageState extends State<car3> {
               children: [
                 Ink.image(
                   image: NetworkImage(
-                      'https://images.pexels.com/photos/18984929/pexels-photo-18984929/free-photo-of-calle-acera-panaderia-tienda.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                      'https://pasteleriasanantonio.com/wp-content/uploads/2022/10/Polo.jpg'),
                   height: 240,
                   fit: BoxFit.cover,
                 ),
@@ -162,7 +162,7 @@ class _MainPageState extends State<car3> {
                   right: 16,
                   left: 16,
                   child: Text(
-                    'Backe med pasie',
+                    'Pasteleria San Antonio',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,

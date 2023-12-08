@@ -21,8 +21,8 @@ class _MainPageState extends State<car2> {
             buildQuoteCard(),
             //buildColoredCard(),
             //buildImageCard(),
-            buildRoundedCard(),
             buildImageInteractionCard(),
+            buildRoundedCard(),
           ],
         ),
       );
