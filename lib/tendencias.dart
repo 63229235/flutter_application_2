@@ -7,7 +7,6 @@ import 'package:flutter_application_2/car4.dart';
 import 'package:flutter_application_2/opci.dart';
 import 'package:flutter_application_2/seguridad.dart';
 
-
 class MyTe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -42,10 +41,9 @@ class MyTrendsScreen extends StatelessWidget {
 class TrendList extends StatelessWidget {
   final List<String> trendingBakeries = [
     'Panadería Bakey',
-    'Panaderia Dulce',
+    'Panaderia Don Mamino',
     'El panadero cerca a tu hogar',
     'Rincón del Pan',
-    
   ];
 
   @override
@@ -88,7 +86,7 @@ class TrendCard extends StatelessWidget {
           case 3:
             Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => car4()),
-            );  
+            );
 
           default:
         }
@@ -99,9 +97,10 @@ class TrendCard extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
-              leading: Icon(Icons.local_cafe),
+              leading: Icon(Icons.local_restaurant_rounded),
               title: Text(bakeryName),
-              subtitle: Text('Descubre las delicias de ${bakeryName.toLowerCase()}'),
+              subtitle:
+                  Text('Descubre las delicias de ${bakeryName.toLowerCase()}'),
             ),
             SizedBox(height: 10),
           ],
@@ -110,4 +109,3 @@ class TrendCard extends StatelessWidget {
     );
   }
 }
-
