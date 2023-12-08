@@ -96,11 +96,6 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
             ),
             Divider(),
             ListTile(
-              leading: Icon(Icons.contact_support),
-              title: Text('NOSE'),
-              onTap: () {},
-            ),
-            ListTile(
               leading: Icon(Icons.shop),
               title: Text('Tiendas'),
               onTap: () {
@@ -120,10 +115,6 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
               leading: Icon(Icons.info),
               title: Text('Acerca de Nosotros'),
               onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.contact_support),
-              title: Text('Soporte'),
             ),
           ],
         ),
