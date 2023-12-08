@@ -21,8 +21,8 @@ class _MainPageState extends State<car4> {
             buildQuoteCard(),
             //buildColoredCard(),
             //buildImageCard(),
-            //buildRoundedCard(),
             buildImageInteractionCard(),
+            buildRoundedCard(),
           ],
         ),
       );
@@ -37,7 +37,7 @@ class _MainPageState extends State<car4> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Rounded card',
+                'Abierto: Lun-Dom 08:00-22:00',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class _MainPageState extends State<car4> {
               ),
               const SizedBox(height: 4),
               Text(
-                'This card is rounded',
+                'Par5a realizar pedidos llamar al numero: 987-482-234',
                 style: TextStyle(fontSize: 20),
               ),
             ],
@@ -59,11 +59,11 @@ class _MainPageState extends State<car4> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Panaderia/pasteleria Bucky',
+                'Panaderia Pasteleria Maria Almenara',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               Text(
-                'Esta es unapequeña panaderia-pasteleria que realiza deliciosos preparados desde el año 1899, animate a probarlos',
+                'Esta es unapequeña panaderia-pasteleria ubicada en el limite de Surco y Miraflores',
                 style: TextStyle(fontSize: 24),
               ),
               const SizedBox(height: 12),
@@ -153,7 +153,7 @@ class _MainPageState extends State<car4> {
               children: [
                 Ink.image(
                   image: NetworkImage(
-                      'https://images.pexels.com/photos/18984929/pexels-photo-18984929/free-photo-of-calle-acera-panaderia-tienda.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                      'https://grupogobesa.com/wp-content/gallery/maria-almenara-pasteleria/maria-almenara.jpeg'),
                   height: 240,
                   fit: BoxFit.cover,
                 ),
@@ -162,7 +162,7 @@ class _MainPageState extends State<car4> {
                   right: 16,
                   left: 16,
                   child: Text(
-                    'Backe med pasie',
+                    'Maria Almenara',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
