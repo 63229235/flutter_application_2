@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart' show ChangeNotifier;
+import 'package:flutter/material.dart';
 import 'package:flutter_application_2/utils/map_style.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -25,12 +26,18 @@ class HomeController extends ChangeNotifier {
     final id = markers.length.toString();
     final markerId = MarkerId(id);
     final marker = Marker(
-        markerId: markerId,
-        position: position,
-        draggable: true,
-        onTap: () {
-          _markersController.sink.add(id);
-        });
+      markerId: markerId,
+      position: position,
+      draggable: true,
+      anchor: const Offset(0.5, -1),
+      icon: BitmapDescriptor.defaultMarkerWithHue(55),
+      onTap: () {
+        _markersController.sink.add(id);
+      },
+      onDragEnd: (newPosition) {
+        print("new position $newPosition");
+      },
+    );
     _markers[markerId] = marker;
     notifyListeners();
   }
