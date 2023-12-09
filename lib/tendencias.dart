@@ -42,7 +42,7 @@ class TrendList extends StatelessWidget {
   final List<String> trendingBakeries = [
     'Panadería Bakey',
     'Panaderia Don Mamino',
-    'El panadero cerca a tu hogar',
+    'Panaderia San Antonio',
     'Rincón del Pan',
   ];
 
