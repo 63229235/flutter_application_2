@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/request_permission/request_permissions_controller.dart';
+import 'package:flutter_application_2/routes/routes.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class RequestPermissionPage extends StatefulWidget {
@@ -11,14 +14,21 @@ class RequestPermissionPage extends StatefulWidget {
 
 class _RequestPermissionPageState extends State<RequestPermissionPage> {
   final _controller = RequestPermissionController(Permission.locationWhenInUse);
+  late StreamSubscription _subscription;
 
   @override
   void initState() {
     super.initState();
+    _subscription = _controller.onStatusChange.listen((status) {
+      if (status == PermissionStatus.granted) {
+        Navigator.pushReplacementNamed(context, Routes.HOME);
+      }
+    });
   }
 
   @override
   void dispose() {
+    _subscription.cancel();
     _controller.dispose();
     super.dispose();
   }

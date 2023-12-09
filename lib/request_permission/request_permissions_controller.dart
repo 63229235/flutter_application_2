@@ -16,7 +16,9 @@ class RequestPermissionController {
   }
 
   void _notify(PermissionStatus status) {
-    if (!_streamController.isClosed && _streamController.hasListener) {}
+    if (!_streamController.isClosed && _streamController.hasListener) {
+      _streamController.sink.add(status);
+    }
   }
 
   void dispose() {
