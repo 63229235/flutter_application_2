@@ -12,7 +12,7 @@ class RequestPermissionController {
 
   request() async {
     final status = await _locationPermission.request();
-    if (status == PermissionStatus.granted) {}
+    _notify(status);
   }
 
   void _notify(PermissionStatus status) {

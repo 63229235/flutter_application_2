@@ -40,6 +40,13 @@ class _RequestPermissionPageState extends State<RequestPermissionPage> {
         child: Container(
           width: double.infinity,
           height: double.infinity,
+          alignment: Alignment.center,
+          child: ElevatedButton(
+            child: const Text("Allow"),
+            onPressed: () {
+              _controller.request();
+            },
+          ),
         ),
       ),
     );
