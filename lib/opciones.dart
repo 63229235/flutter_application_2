@@ -7,8 +7,6 @@ import 'package:flutter_application_2/seguridad.dart';
 import 'package:flutter_application_2/tendencias.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
-
-
 class MyOpciones extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,145 +27,148 @@ class MyHomePage extends StatelessWidget {
   }
 
   @override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: Text('Promos Panaderias'),
-      backgroundColor: Color(0xFFE6B08B),
-    ),
-    drawer: Drawer(
-      child: Container(
-        color: Colors.black, // Establece el fondo del Drawer a negro
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            Container(
-              color: Color.fromARGB(255, 10, 5, 1),
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: Center(
-                child: Column(
-                  children: [
-                    const SizedBox(height: 10),
-                    Text(
-                      'Opciones',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Promos Panaderaias'),
+        backgroundColor: Color(0xFFE6B08B),
+      ),
+      drawer: Drawer(
+        child: Container(
+          color: Colors.black, // Establece el fondo del Drawer a negro
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              Container(
+                color: Color.fromARGB(255, 10, 5, 1),
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Center(
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 10),
+                      Text(
+                        'Opciones',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-            const Divider(),
-            ListTile(
-              leading: Icon(Icons.verified_user,color: Colors.white,),
-              title: Text('Verificación de perfil'),
-              textColor: Colors.white,
-              onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => Perfil());
-                Navigator.push(context, route);
-              },
-            ),
-            const Divider(),
-            ListTile(
-              leading: Icon(Icons.privacy_tip,color: Colors.white),
-              title: Text('Privacidad'),
-              textColor: Colors.white,
-              onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => Myts());
-                Navigator.push(context, route);
-              },
-            ),
-             const Divider(),
-            ListTile(
-              leading: Icon(Icons.security,color: Colors.white),
-              title: Text('Seguridad'),
-              textColor: Colors.white,
-              onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => Mysegu());
-                Navigator.push(context, route);
-              },
-            ),
-             const Divider(),
-            ListTile(
-              leading: Icon(Icons.message,color: Colors.white),
-              title: Text('Mensajes'),
-              textColor: Colors.white,
-              onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => Msjs());
-                Navigator.push(context, route);
-              },
-            ),
-             const Divider(),
-            ListTile(
-              leading: Icon(Icons.trending_up_sharp,color: Colors.white),
-              title: Text('Tendencias'),
-              textColor: Colors.white,
-              onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => MyTe());
-                Navigator.push(context, route);
-              },
-            ),
-             const Divider(),
-            ListTile(
-              leading: Icon(Icons.logout,color: Colors.white),
-              title: Text('Exit'),
-              textColor: Colors.white,
-              onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => BakeryApp());
-                Navigator.push(context, route);
-              },
-            ),
-          ],
+              const Divider(),
+              ListTile(
+                leading: Icon(
+                  Icons.verified_user,
+                  color: Colors.white,
+                ),
+                title: Text('Verificación de perfil'),
+                textColor: Colors.white,
+                onTap: () {
+                  Route route = MaterialPageRoute(builder: (_) => Perfil());
+                  Navigator.push(context, route);
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: Icon(Icons.privacy_tip, color: Colors.white),
+                title: Text('Privacidad'),
+                textColor: Colors.white,
+                onTap: () {
+                  Route route = MaterialPageRoute(builder: (_) => Myts());
+                  Navigator.push(context, route);
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: Icon(Icons.security, color: Colors.white),
+                title: Text('Seguridad'),
+                textColor: Colors.white,
+                onTap: () {
+                  Route route = MaterialPageRoute(builder: (_) => Mysegu());
+                  Navigator.push(context, route);
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: Icon(Icons.message, color: Colors.white),
+                title: Text('Mensajes'),
+                textColor: Colors.white,
+                onTap: () {
+                  Route route = MaterialPageRoute(builder: (_) => Msjs());
+                  Navigator.push(context, route);
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: Icon(Icons.trending_up_sharp, color: Colors.white),
+                title: Text('Tendencias'),
+                textColor: Colors.white,
+                onTap: () {
+                  Route route = MaterialPageRoute(builder: (_) => MyTe());
+                  Navigator.push(context, route);
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: Icon(Icons.logout, color: Colors.white),
+                title: Text('Exit'),
+                textColor: Colors.white,
+                onTap: () {
+                  Route route = MaterialPageRoute(builder: (_) => BakeryApp());
+                  Navigator.push(context, route);
+                },
+              ),
+            ],
+          ),
         ),
       ),
-    ),
-    body: Column(
-      children: [
-        ImageSlideshow(
-          width: double.infinity,
-          height: 200,
-          initialPage: 0,
-          indicatorColor: Colors.black,
-          indicatorBackgroundColor: Colors.grey,
-          children: [
-            Image.asset(
-              'assets/images/19.jpg',
-              fit: BoxFit.cover,
-            ),
-            Image.asset(
-              'assets/images/56.jpg',
-              fit: BoxFit.cover,
-            ),
-            Image.asset(
-              'assets/images/34.jpg',
-              fit: BoxFit.cover,
-            ),
-          ],
-          onPageChanged: (value) {
-            print('Página cambiada: $value');
-          },
-          autoPlayInterval: 3000,
-          isLoop: true,
-        ),
-        const SizedBox(height: 16), // Espacio agregado entre los contenedores
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround, // Alineación espaciada
-          children: [
-            MyCombinedContainer(
-              imagePath: 'assets/images/34.jpg',
-            ),
-            MyCombinedContainer(
-              imagePath: 'assets/images/19.jpg',
-            ),
-          ],
-        ),
-      ],
-    ),
-  );
-}
-
+      body: Column(
+        children: [
+          ImageSlideshow(
+            width: double.infinity,
+            height: 200,
+            initialPage: 0,
+            indicatorColor: Colors.black,
+            indicatorBackgroundColor: Colors.grey,
+            children: [
+              Image.asset(
+                'assets/images/19.jpg',
+                fit: BoxFit.cover,
+              ),
+              Image.asset(
+                'assets/images/56.jpg',
+                fit: BoxFit.cover,
+              ),
+              Image.asset(
+                'assets/images/34.jpg',
+                fit: BoxFit.cover,
+              ),
+            ],
+            onPageChanged: (value) {
+              print('Página cambiada: $value');
+            },
+            autoPlayInterval: 3000,
+            isLoop: true,
+          ),
+          const SizedBox(height: 16), // Espacio agregado entre los contenedores
+          Row(
+            mainAxisAlignment:
+                MainAxisAlignment.spaceAround, // Alineación espaciada
+            children: [
+              MyCombinedContainer(
+                imagePath: 'assets/images/34.jpg',
+              ),
+              MyCombinedContainer(
+                imagePath: 'assets/images/19.jpg',
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class MyCombinedContainer extends StatelessWidget {
@@ -240,4 +241,3 @@ class MyCombinedContainer extends StatelessWidget {
     );
   }
 }
-
