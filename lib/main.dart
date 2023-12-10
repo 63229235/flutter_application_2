@@ -3,16 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/afilio.dart';
 import 'package:flutter_application_2/login.dart';
+import 'package:flutter_application_2/routes/pages.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/',
-    routes: {
-      '/': (context) => HomeScreen(),
-      '/user_login': (context) => MyAppForm(),
-      '/afiliar_local': (context) => afilio(),
-    },
+    initialRoute: 'Routes.SPLASH',
+    routes: appRoutes(),
+    //{
+    //  '/': (context) => HomeScreen(),
+    //  '/user_login': (context) => MyAppForm(),
+    //  '/afiliar_local': (context) => afilio(),
+    //},
   ));
 }
 
