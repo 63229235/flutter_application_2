@@ -5,6 +5,9 @@ import 'package:flutter_application_2/catalogo/Catalago2.dart';
 import 'package:flutter_application_2/catalogo/Catalago3.dart';
 import 'package:flutter_application_2/catalogo/Catalago4.dart';
 
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+
 class NCarrusel extends StatefulWidget {
   @override
   _MySliderState createState() => _MySliderState();
@@ -13,25 +16,19 @@ class NCarrusel extends StatefulWidget {
 class _MySliderState extends State<NCarrusel> {
   int _currentIndex = 0;
   CarouselController _carouselController = CarouselController();
+
   List<Function(BuildContext)> _onTapFunctions = [
     (context) {
-      Route route = MaterialPageRoute(builder: (_) => Catalago());
-      Navigator.push(context, route);
+      Navigator.push(context, MaterialPageRoute(builder: (_) => Catalago()));
     },
     (context) {
-      Route route = MaterialPageRoute(builder: (_) => Catalago2());
-      Navigator.push(context, route);
-      print('Tocaste la segunda imagen');
+      Navigator.push(context, MaterialPageRoute(builder: (_) => Catalago2()));
     },
     (context) {
-      Route route = MaterialPageRoute(builder: (_) => Catalago3());
-      Navigator.push(context, route);
-      print('Tocaste la tercera imagen');
+      Navigator.push(context, MaterialPageRoute(builder: (_) => Catalago3()));
     },
     (context) {
-      Route route = MaterialPageRoute(builder: (_) => Catalago4());
-      Navigator.push(context, route);
-      print('Tocaste la cuarta imagen');
+      Navigator.push(context, MaterialPageRoute(builder: (_) => Catalago4()));
     },
   ];
 
@@ -39,19 +36,17 @@ class _MySliderState extends State<NCarrusel> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Tiendas Afiliadas"),
-        backgroundColor: Color(0xFFE6B08B),
+        title: Text(
+          "Tiendas Afiliadas",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Color(0xFFEC7F5C), // Color similar a Rappi
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CarouselSlider(
-            items: [
-              _buildImageContainer('assets/images/1.jpg', 0),
-              _buildImageContainer('assets/images/11.jpg', 1),
-              _buildImageContainer('assets/images/12.jpg', 2),
-              _buildImageContainer('assets/images/13.jpg', 3),
-            ],
+          CarouselSlider.builder(
+            itemCount: 4,
             options: CarouselOptions(
               autoPlay: true,
               enlargeCenterPage: true,
@@ -61,8 +56,16 @@ class _MySliderState extends State<NCarrusel> {
                 });
               },
               aspectRatio: 16 / 9,
+              scrollDirection: Axis.horizontal,
+              viewportFraction: 0.85,
+              initialPage: 0,
+              height: 300.0,
             ),
             carouselController: _carouselController,
+            itemBuilder: (context, index, realIndex) {
+              return _buildImageContainer(
+                  'assets/images/${index + 1}.jpg', index);
+            },
           ),
           SizedBox(height: 20.0),
           Row(
@@ -79,7 +82,9 @@ class _MySliderState extends State<NCarrusel> {
                   margin: EdgeInsets.symmetric(horizontal: 8.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: _currentIndex == index ? Colors.blue : Colors.grey,
+                    color: _currentIndex == index
+                        ? Color(0xFFEC7F5C)
+                        : Colors.grey, // Color de punto activo similar a Rappi
                   ),
                 ),
               );
@@ -97,16 +102,23 @@ class _MySliderState extends State<NCarrusel> {
         margin: EdgeInsets.all(8.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          border: Border.all(
-            color: Colors.grey,
-            width: 2.0,
-          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.8),
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: Offset(0, 3),
+            ),
+          ],
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(8.0),
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
+          child: Hero(
+            tag: 'image_$index',
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ),

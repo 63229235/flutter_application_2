@@ -40,8 +40,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
         title: Text('El MAÑANERO'),
         backgroundColor: Color(0xFFE6B08B),
         actions: [
-          IconButton(
-            icon: Icon(Icons.account_circle),
+          ElevatedButton.icon(
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -49,9 +48,15 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
                 ),
               );
             },
+            icon: Icon(Icons.account_circle),
+            label: Text('Perfil'),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.transparent,
+              elevation: 0,
+            ),
           ),
-          IconButton(
-            icon: Icon(Icons.settings),
+          SizedBox(width: 10),
+          ElevatedButton.icon(
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -59,6 +64,12 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
                 ),
               );
             },
+            icon: Icon(Icons.settings),
+            label: Text('Configuración'),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.transparent,
+              elevation: 0,
+            ),
           ),
         ],
       ),
@@ -68,10 +79,18 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             Container(
-              color: Color(0xFFE6B08B),
-              padding: EdgeInsets.symmetric(vertical: 20),
+              height: 200,
+              decoration: BoxDecoration(
+                color: Color(0xFFE6B08B),
+                image: DecorationImage(
+                  image: AssetImage(
+                      'assets/background.jpg'), // Add a background image
+                  fit: BoxFit.cover,
+                ),
+              ),
               child: Center(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CircleAvatar(
                       radius: 50,
@@ -85,6 +104,13 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
                         fontSize: 18,
                       ),
                     ),
+                    Text(
+                      'protipo@example.com',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -92,29 +118,40 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
             ListTile(
               leading: Icon(Icons.local_shipping),
               title: Text('Seguimiento de Pedidos'),
-              onTap: () {},
+              onTap: () {
+                // Handle tap for tracking orders
+              },
             ),
             Divider(),
             ListTile(
               leading: Icon(Icons.shop),
               title: Text('Tiendas'),
               onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => NCarrusel());
-                Navigator.push(context, route);
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => NCarrusel()));
               },
             ),
             ListTile(
               leading: Icon(Icons.breakfast_dining),
-              title: Text('Promocioness'),
+              title: Text('Promociones'),
               onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => MyOpcioness());
-                Navigator.push(context, route);
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => MyOpcioness()));
               },
             ),
             ListTile(
               leading: Icon(Icons.info),
               title: Text('Acerca de Nosotros'),
-              onTap: () {},
+              onTap: () {
+                // Handle tap for about us
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Cerrar Sesión'),
+              onTap: () {
+                // Handle logout
+              },
             ),
           ],
         ),
