@@ -164,7 +164,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: 'Routes.SPLASH',
-      routes: appRoutes(),
+      routes: Map(),
     );
   }
 }
