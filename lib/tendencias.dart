@@ -4,8 +4,6 @@ import 'package:flutter_application_2/car1.dart';
 import 'package:flutter_application_2/car2.dart';
 import 'package:flutter_application_2/car3.dart';
 import 'package:flutter_application_2/car4.dart';
-import 'package:flutter_application_2/opci.dart';
-import 'package:flutter_application_2/seguridad.dart';
 
 class MyTe extends StatelessWidget {
   @override

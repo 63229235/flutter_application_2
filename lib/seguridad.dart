@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/opci.dart';
-import 'package:flutter_application_2/opciones.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class Mysegu extends StatelessWidget {

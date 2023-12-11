@@ -5,9 +5,6 @@ import 'package:flutter_application_2/catalogo/Catalago2.dart';
 import 'package:flutter_application_2/catalogo/Catalago3.dart';
 import 'package:flutter_application_2/catalogo/Catalago4.dart';
 
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/material.dart';
-
 class NCarrusel extends StatefulWidget {
   @override
   _MySliderState createState() => _MySliderState();

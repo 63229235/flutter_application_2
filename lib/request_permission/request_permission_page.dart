@@ -72,7 +72,7 @@ class _RequestPermissionPageState extends State<RequestPermissionPage>
 
   @override
   void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     _subscription.cancel();
     _controller.dispose();
     super.dispose();

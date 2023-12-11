@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.black, // Establecer el fondo de la aplicación a negro
+        scaffoldBackgroundColor:
+            Colors.black, // Establecer el fondo de la aplicación a negro
       ),
     );
   }
@@ -23,6 +24,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // ignore: unused_field
   PermissionStatus _cameraPermissionStatus = PermissionStatus.permanentlyDenied;
 
   // Método para verificar el estado actual del permiso de la cámara
@@ -70,8 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => Myts()));
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => Myts()));
           },
         ),
       ),
@@ -86,7 +88,9 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 350,
               height: 50,
               color: Colors.black, // Color del primer contenedor
-              padding: EdgeInsets.symmetric(horizontal: 20.0), // Ajustar el espacio interno alrededor del texto
+              padding: EdgeInsets.symmetric(
+                  horizontal:
+                      20.0), // Ajustar el espacio interno alrededor del texto
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black, // Color del botón (negro)
@@ -99,7 +103,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'Permisos de la cámara',
                     maxLines: 1, // Establecer el texto a una sola línea
-                    overflow: TextOverflow.ellipsis, // Mostrar puntos suspensivos (...) si el texto es muy largo
+                    overflow: TextOverflow
+                        .ellipsis, // Mostrar puntos suspensivos (...) si el texto es muy largo
                     style: TextStyle(
                       color: Colors.white, // Color del texto en el botón
                     ),
@@ -112,7 +117,9 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 350,
               height: 50,
               color: Colors.black, // Color del segundo contenedor
-              padding: EdgeInsets.symmetric(horizontal: 20.0), // Ajustar el espacio interno alrededor del texto
+              padding: EdgeInsets.symmetric(
+                  horizontal:
+                      20.0), // Ajustar el espacio interno alrededor del texto
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black, // Color del botón (negro)
@@ -125,7 +132,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'Ir a Configuración de la Aplicación',
                     maxLines: 1, // Establecer el texto a una sola línea
-                    overflow: TextOverflow.ellipsis, // Mostrar puntos suspensivos (...) si el texto es muy largo
+                    overflow: TextOverflow
+                        .ellipsis, // Mostrar puntos suspensivos (...) si el texto es muy largo
                     style: TextStyle(
                       color: Colors.white, // Color del texto en el botón
                     ),
