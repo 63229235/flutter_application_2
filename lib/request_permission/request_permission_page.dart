@@ -16,6 +16,7 @@ class _RequestPermissionPageState extends State<RequestPermissionPage>
     with WidgetsBindingObserver {
   final _controller = RequestPermissionController(Permission.locationWhenInUse);
   late StreamSubscription _subscription;
+  bool _fromSettings = false;
 
   @override
   void initState() {
@@ -35,9 +36,9 @@ class _RequestPermissionPageState extends State<RequestPermissionPage>
                         "No se pudo conectar a tu ubicación acepte el permiso"),
                     actions: [
                       TextButton(
-                          onPressed: () {
+                          onPressed: () async {
                             Navigator.pop(context);
-                            openAppSettings();
+                            _fromSettings = await openAppSettings();
                           },
                           child: const Text("Ajustes")),
                       TextButton(
@@ -58,12 +59,15 @@ class _RequestPermissionPageState extends State<RequestPermissionPage>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) async {
-    if (state == AppLifecycleState.resumed) {
+    print("state $state");
+
+    if (state == AppLifecycleState.resumed && _fromSettings) {
       final status = await _controller.check();
       if (status == PermissionStatus.granted) {
         _goToHome();
       }
     }
+    _fromSettings = false;
   }
 
   @override

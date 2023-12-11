@@ -17,6 +17,8 @@ class HomeController extends ChangeNotifier {
     target: LatLng(-12.0467946, -77.0147041),
     zoom: 17,
   );
+  bool _loading = true;
+  bool get loading => _loading;
 
   void onMapCreated(GoogleMapController controller) {
     controller.setMapStyle(mapStyle);
