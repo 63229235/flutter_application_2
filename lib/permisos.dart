@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.black, // Establecer el fondo de la aplicación a negro
+        scaffoldBackgroundColor: Colors.black,
       ),
     );
   }
@@ -25,7 +25,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   PermissionStatus _cameraPermissionStatus = PermissionStatus.permanentlyDenied;
 
-  // Método para verificar el estado actual del permiso de la cámara
   Future<void> _checkCameraPermissionStatus() async {
     var status = await Permission.camera.status;
     setState(() {
@@ -33,23 +32,17 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  // Método para solicitar permisos
   Future<void> _requestPermission() async {
     var status = await Permission.camera.request();
 
     if (status.isGranted) {
-      // El usuario concedió el permiso
       print("Permiso concedido");
     } else if (status.isDenied) {
-      // El usuario negó el permiso
       print("Permiso negado por el usuario");
     } else if (status.isPermanentlyDenied) {
-      // El usuario negó el permiso y seleccionó "No volver a preguntar"
-      // Puedes redirigir al usuario a la configuración de la aplicación para habilitar manualmente el permiso
       openAppSettings();
     }
 
-    // Actualiza el estado del permiso después de la solicitud
     _checkCameraPermissionStatus();
   }
 
@@ -66,12 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(
           'Gestor de permisos',
         ),
-        backgroundColor: Colors.black, // Color de fondo de la AppBar
+        backgroundColor: Colors.black,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => Myts()));
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => Myts()));
           },
         ),
       ),
@@ -85,11 +78,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: 350,
               height: 50,
-              color: Colors.black, // Color del primer contenedor
-              padding: EdgeInsets.symmetric(horizontal: 20.0), // Ajustar el espacio interno alrededor del texto
+              color: Colors.black,
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.black, // Color del botón (negro)
+                  primary: Colors.black,
                 ),
                 onPressed: () {
                   _requestPermission();
@@ -98,10 +91,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Permisos de la cámara',
-                    maxLines: 1, // Establecer el texto a una sola línea
-                    overflow: TextOverflow.ellipsis, // Mostrar puntos suspensivos (...) si el texto es muy largo
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      color: Colors.white, // Color del texto en el botón
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -111,11 +104,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: 350,
               height: 50,
-              color: Colors.black, // Color del segundo contenedor
-              padding: EdgeInsets.symmetric(horizontal: 20.0), // Ajustar el espacio interno alrededor del texto
+              color: Colors.black,
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.black, // Color del botón (negro)
+                  primary: Colors.black,
                 ),
                 onPressed: () {
                   _requestPermission();
@@ -124,10 +117,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Ir a Configuración de la Aplicación',
-                    maxLines: 1, // Establecer el texto a una sola línea
-                    overflow: TextOverflow.ellipsis, // Mostrar puntos suspensivos (...) si el texto es muy largo
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      color: Colors.white, // Color del texto en el botón
+                      color: Colors.white,
                     ),
                   ),
                 ),

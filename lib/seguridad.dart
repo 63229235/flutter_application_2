@@ -10,8 +10,7 @@ class Mysegu extends StatelessWidget {
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor:
-            Colors.black, // Establecer el fondo de la aplicación a negro
+        scaffoldBackgroundColor: Colors.black,
       ),
     );
   }
@@ -25,7 +24,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   PermissionStatus _cameraPermissionStatus = PermissionStatus.permanentlyDenied;
 
-  // Método para verificar el estado actual del permiso de la cámara
   Future<void> _checkCameraPermissionStatus() async {
     var status = await Permission.camera.status;
     setState(() {
@@ -33,7 +31,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  // Método para solicitar permisos
   Future<void> _requestPermission() async {
     var status = await Permission.camera.request();
 
@@ -94,10 +91,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'Actividades realizadas ',
                     maxLines: 1,
-                    overflow: TextOverflow
-                        .ellipsis, // Mostrar puntos suspensivos (...) si el texto es muy largo
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      color: Colors.white, // Color del texto en el botón
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -107,13 +103,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: 350,
               height: 50,
-              color: Colors.black, // Color del segundo contenedor
-              padding: EdgeInsets.symmetric(
-                  horizontal:
-                      20.0), // Ajustar el espacio interno alrededor del texto
+              color: Colors.black,
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.black, // Color del botón (negro)
+                  primary: Colors.black,
                 ),
                 onPressed: () {
                   _requestPermission();

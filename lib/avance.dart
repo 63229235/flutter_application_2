@@ -6,6 +6,7 @@ import 'package:flutter_application_2/NCarrusel.dart';
 import 'package:flutter_application_2/carousel_page.dart';
 import 'package:flutter_application_2/login.dart';
 import 'package:flutter_application_2/mapa.dart';
+import 'package:flutter_application_2/mensajes.dart';
 import 'package:flutter_application_2/nosotros.dart';
 import 'package:flutter_application_2/opci.dart';
 import 'package:flutter_application_2/opciones.dart';
@@ -84,8 +85,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
               decoration: BoxDecoration(
                 color: Color(0xFFE6B08B),
                 image: DecorationImage(
-                  image: AssetImage(
-                      'assets/background.jpg'), // Add a background image
+                  image: AssetImage('assets/background.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -95,18 +95,19 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
                   children: [
                     CircleAvatar(
                       radius: 50,
-                      backgroundImage: AssetImage('assets/images/2.jpg'),
+                      backgroundImage:
+                          AssetImage('assets/images/Perfil flutter.jpg'),
                     ),
                     SizedBox(height: 10),
                     Text(
-                      'Protipo',
+                      'Alex',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
                       ),
                     ),
                     Text(
-                      'protipo@example.com',
+                      'Alex@hotmail.com',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14,
@@ -119,9 +120,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
             ListTile(
               leading: Icon(Icons.local_shipping),
               title: Text('Seguimiento de Pedidos'),
-              onTap: () {
-                // Handle tap for tracking orders
-              },
+              onTap: () {},
             ),
             Divider(),
             ListTile(
@@ -143,15 +142,16 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
             ListTile(
               leading: Icon(Icons.info),
               title: Text('Acerca de Nosotros'),
-              onTap: () {
-                // Handle tap for about us
-              },
+              onTap: () {},
             ),
             ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Cerrar Sesión'),
+              leading: Icon(Icons.message),
+              title: Text('Chats'),
               onTap: () {
-                // Handle logout
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => Msjs()),
+                );
               },
             ),
           ],

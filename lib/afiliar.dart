@@ -34,7 +34,6 @@ class LocalRegistrationScreen extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: SingleChildScrollView(
-          // Agregamos SingleChildScrollView aquí
           child: Column(
             children: [
               TextFormField(

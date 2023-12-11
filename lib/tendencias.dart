@@ -67,7 +67,6 @@ class TrendCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Redirigir a una ventana diferente según el índice
         switch (index) {
           case 0:
             Navigator.of(context).push(

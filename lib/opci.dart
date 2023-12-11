@@ -81,16 +81,6 @@ class Myqr extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              leading: Icon(Icons.message, color: Colors.black),
-              title: Text('Mensajes'),
-              textColor: Colors.black,
-              onTap: () {
-                Route route = MaterialPageRoute(builder: (_) => Msjs());
-                Navigator.push(context, route);
-              },
-            ),
-            const Divider(),
-            ListTile(
               leading: Icon(Icons.trending_up_sharp, color: Colors.black),
               title: Text('Tendencias'),
               textColor: Colors.black,

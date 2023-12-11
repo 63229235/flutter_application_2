@@ -18,13 +18,9 @@ class MyOpciones extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  void _navigateToPerfil(BuildContext context) {
-    // Tu lógica de navegación a la pantalla de perfil
-  }
+  void _navigateToPerfil(BuildContext context) {}
 
-  void _navigateToBakeryApp(BuildContext context) {
-    // Tu lógica de navegación a la pantalla de BakeryApp
-  }
+  void _navigateToBakeryApp(BuildContext context) {}
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +31,7 @@ class MyHomePage extends StatelessWidget {
       ),
       drawer: Drawer(
         child: Container(
-          color: Colors.black, // Establece el fondo del Drawer a negro
+          color: Colors.black,
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
@@ -152,10 +148,9 @@ class MyHomePage extends StatelessWidget {
             autoPlayInterval: 3000,
             isLoop: true,
           ),
-          const SizedBox(height: 16), // Espacio agregado entre los contenedores
+          const SizedBox(height: 16),
           Row(
-            mainAxisAlignment:
-                MainAxisAlignment.spaceAround, // Alineación espaciada
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               MyCombinedContainer(
                 imagePath: 'assets/images/34.jpg',
@@ -201,17 +196,12 @@ class MyCombinedContainer extends StatelessWidget {
             right: 20,
             child: ElevatedButton(
               onPressed: () {
-                // Lógica a ejecutar cuando se presiona el botón
-
-                // Muestra un SnackBar cuando se presiona el botón
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Aadasdasd'),
                     duration: Duration(seconds: 2),
                   ),
                 );
-
-                // Puedes agregar más lógica aquí si es necesario
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.transparent,

@@ -40,7 +40,7 @@ class _MySliderState extends State<NCarrusel> {
           "Tiendas Afiliadas",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Color(0xFFEC7F5C), // Color similar a Rappi
+        backgroundColor: Color(0xFFEC7F5C),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -84,7 +84,7 @@ class _MySliderState extends State<NCarrusel> {
                     shape: BoxShape.circle,
                     color: _currentIndex == index
                         ? Color(0xFFEC7F5C)
-                        : Colors.grey, // Color de punto activo similar a Rappi
+                        : Colors.grey,
                   ),
                 ),
               );
