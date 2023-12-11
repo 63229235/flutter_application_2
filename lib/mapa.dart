@@ -9,22 +9,33 @@ class Mapa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<HomeController>(
-      create: (_) {
-        final controller = HomeController();
-        controller.onMarkerTap.listen((String id) {
-          print("got to $id");
-        });
-        return controller;
-      },
-      child: Scaffold(
-          body: Consumer<HomeController>(
-        builder: (_, controller, __) => GoogleMap(
-          markers: controller.markers,
-          onMapCreated: controller.onMapCreated,
-          initialCameraPosition: controller.initialCameraPosition,
-          onTap: controller.onTap,
-        ),
-      )),
-    );
+        create: (_) {
+          final controller = HomeController();
+          controller.onMarkerTap.listen((String id) {
+            print("got to $id");
+          });
+          return controller;
+        },
+        child: Scaffold(
+          body: Selector<HomeController, bool>(
+            selector: (_, controller) => controller.loading,
+            builder: (context, loading, loadingWidget) {
+              if (loading) {
+                return loadingWidget!;
+              }
+              return Consumer<HomeController>(
+                builder: (_, controller, __) => GoogleMap(
+                  markers: controller.markers,
+                  onMapCreated: controller.onMapCreated,
+                  initialCameraPosition: controller.initialCameraPosition,
+                  onTap: controller.onTap,
+                ),
+              );
+            },
+            child: const Center(
+              child: CircularProgressIndicator(),
+            ),
+          ),
+        ));
   }
 }
