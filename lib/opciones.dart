@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/avance.dart';
+import 'package:flutter_application_2/Inicio.dart';
 import 'package:flutter_application_2/mensajes.dart';
 import 'package:flutter_application_2/perfil.dart';
 import 'package:flutter_application_2/privacidad.dart';

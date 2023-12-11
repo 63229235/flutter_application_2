@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/avance.dart';
+import 'package:flutter_application_2/Inicio.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 void main() {
@@ -14,10 +14,10 @@ class MyOpcioness extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Color(0xFFE6B08B),
-          colorScheme: ColorScheme.light(
-            primary: Color(0xFFE6B08B),
-            secondary: Colors.white,
-          ),
+        colorScheme: ColorScheme.light(
+          primary: Color(0xFFE6B08B),
+          secondary: Colors.white,
+        ),
         appBarTheme: AppBarTheme(
           elevation: 4,
         ),
@@ -61,12 +61,12 @@ class _HomePageState extends State<MyHome> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => BakeryApp(),
-                ),
-              );
-            },
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => BakeryApp(),
+              ),
+            );
+          },
         ),
       ),
       body: Container(
@@ -221,14 +221,3 @@ class MyCombinedContainer extends StatelessWidget {
     );
   }
 }
-
-
-
-
-            
-
-
-             
-
-
-

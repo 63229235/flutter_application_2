@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/avance.dart';
+import 'package:flutter_application_2/Inicio.dart';
 import 'package:flutter_application_2/model_recetas.dart';
 
 class MostrarReceta extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter_application_2/colors_filters.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/tendencias.dart';
-import 'package:flutter_application_2/avance.dart';
+import 'package:flutter_application_2/Inicio.dart';
 
 class car4 extends StatefulWidget {
   @override

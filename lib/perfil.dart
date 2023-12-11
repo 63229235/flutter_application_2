@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/afiliar.dart';
-import 'package:flutter_application_2/avance.dart';
+import 'package:flutter_application_2/Inicio.dart';
 import 'package:flutter_application_2/opci.dart';
 import 'package:flutter_application_2/registro.dart';
 import 'package:flutter_application_2/seguridad.dart';

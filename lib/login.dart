@@ -1,7 +1,7 @@
 // ignore_for_file: unused_import, prefer_const_constructors, library_private_types_in_public_api, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/avance.dart';
+import 'package:flutter_application_2/Inicio.dart';
 import 'package:flutter_application_2/perfil.dart';
 import 'package:flutter_application_2/registro.dart';
 
