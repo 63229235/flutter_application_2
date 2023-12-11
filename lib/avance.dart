@@ -10,6 +10,7 @@ import 'package:flutter_application_2/nosotros.dart';
 import 'package:flutter_application_2/opci.dart';
 import 'package:flutter_application_2/opciones.dart';
 import 'package:flutter_application_2/promociones.dart';
+import 'package:flutter_application_2/routes/pages.dart';
 import 'package:flutter_application_2/soporte.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -160,6 +161,10 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
   }
 
   Widget _buildLocation() {
-    return Center(child: Mapa());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: 'Routes.SPLASH',
+      routes: appRoutes(),
+    );
   }
 }
