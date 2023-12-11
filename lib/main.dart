@@ -36,15 +36,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-          future: _initializeFirebase(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              return LoginScreen();
-            }
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }),
+        future: _initializeFirebase(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return LoginScreen();
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      ),
     );
   }
 }
@@ -57,30 +58,34 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  static Future<User?> loginUsingEmailPassword(
-      {required String email,
-      required String password,
-      required BuildContext context}) async {
-    FirebaseAuth auth = FirebaseAuth.instance;
-    User? user;
-    try {
-      UserCredential userCredential = await auth.signInWithEmailAndPassword(
-          email: email, password: password);
-      user = userCredential.user;
-    } on FirebaseAuthException catch (e) {
-      if (e.code == "user-not-found") {
-        print("No user found for that email");
-      }
-    }
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
-    return user;
+  Future<void> _initializeFirebase() async {
+    await Firebase.initializeApp();
+  }
+
+  Future<User?> loginUsingEmailPassword({
+    required String email,
+    required String password,
+    required BuildContext context,
+  }) async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      return userCredential.user;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user');
+      }
+      return null;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController _emailController = TextEditingController();
-    TextEditingController _passwordController = TextEditingController();
-
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -88,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            "MyApp Tittle",
+            'MyApp Tittle',
             style: TextStyle(
               color: Colors.black,
               fontSize: 28.0,
@@ -96,11 +101,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           const Text(
-            "login to your app",
+            'login to your app',
             style: TextStyle(
-                color: Colors.black,
-                fontSize: 44.0,
-                fontWeight: FontWeight.bold),
+              color: Colors.black,
+              fontSize: 44.0,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(
             height: 44.0,
@@ -109,11 +115,12 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
-                hintText: "User Email",
-                prefixIcon: Icon(
-                  Icons.mail,
-                  color: Colors.black,
-                )),
+              hintText: 'User Email',
+              prefixIcon: Icon(
+                Icons.mail,
+                color: Colors.black,
+              ),
+            ),
           ),
           const SizedBox(
             height: 28.0,
@@ -122,17 +129,18 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _passwordController,
             obscureText: true,
             decoration: const InputDecoration(
-                hintText: "User Password",
-                prefixIcon: Icon(
-                  Icons.lock,
-                  color: Colors.black,
-                )),
+              hintText: 'User Password',
+              prefixIcon: Icon(
+                Icons.lock,
+                color: Colors.black,
+              ),
+            ),
           ),
           const SizedBox(
             height: 8.0,
           ),
           const Text(
-            "No recuerdas tu contraseña",
+            'No recuerdas tu contraseña',
             style: TextStyle(color: Colors.blue),
           ),
           const SizedBox(
@@ -145,27 +153,34 @@ class _LoginScreenState extends State<LoginScreen> {
               elevation: 0.0,
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0)),
+                borderRadius: BorderRadius.circular(12.0),
+              ),
               onPressed: () async {
+                await _initializeFirebase();
+
                 User? user = await loginUsingEmailPassword(
-                    email: _emailController.text,
-                    password: _passwordController.text,
-                    context: context);
-                print(user);
+                  email: _emailController.text,
+                  password: _passwordController.text,
+                  context: context,
+                );
+
                 if (user != null) {
                   Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => ProfileScreen()));
+                    MaterialPageRoute(
+                      builder: (context) => ProfileScreen(),
+                    ),
+                  );
                 }
               },
               child: const Text(
-                "login",
+                'login',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18.0,
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
