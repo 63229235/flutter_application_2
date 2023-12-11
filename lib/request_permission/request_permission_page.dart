@@ -12,25 +12,70 @@ class RequestPermissionPage extends StatefulWidget {
   State<RequestPermissionPage> createState() => _RequestPermissionPageState();
 }
 
-class _RequestPermissionPageState extends State<RequestPermissionPage> {
+class _RequestPermissionPageState extends State<RequestPermissionPage>
+    with WidgetsBindingObserver {
   final _controller = RequestPermissionController(Permission.locationWhenInUse);
   late StreamSubscription _subscription;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance!.addObserver(this);
     _subscription = _controller.onStatusChange.listen((status) {
-      if (status == PermissionStatus.granted) {
-        Navigator.pushReplacementNamed(context, Routes.HOME);
+      switch (status) {
+        case PermissionStatus.granted:
+          _goToHome();
+          break;
+        case PermissionStatus.permanentlyDenied:
+          showDialog(
+              context: context,
+              builder: (_) => AlertDialog(
+                    title: const Text("Info"),
+                    content: const Text(
+                        "No se pudo conectar a tu ubicación acepte el permiso"),
+                    actions: [
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                            openAppSettings();
+                          },
+                          child: const Text("Ajustes")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text("Cancel")),
+                    ],
+                  ));
+          break;
+        case PermissionStatus.denied:
+        case PermissionStatus.restricted:
+        case PermissionStatus.limited:
+        case PermissionStatus.provisional:
       }
     });
   }
 
   @override
+  void didChangeAppLifecycleState(AppLifecycleState state) async {
+    if (state == AppLifecycleState.resumed) {
+      final status = await _controller.check();
+      if (status == PermissionStatus.granted) {
+        _goToHome();
+      }
+    }
+  }
+
+  @override
   void dispose() {
+    WidgetsBinding.instance!.removeObserver(this);
     _subscription.cancel();
     _controller.dispose();
     super.dispose();
+  }
+
+  void _goToHome() {
+    Navigator.pushReplacementNamed(context, Routes.HOME);
   }
 
   @override
