@@ -70,7 +70,7 @@ class TrendCard extends StatelessWidget {
         switch (index) {
           case 0:
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => card1()),
+              MaterialPageRoute(builder: (context) => Card1()),
             );
             break;
           case 1:

@@ -12,7 +12,6 @@ import 'package:flutter_application_2/opci.dart';
 import 'package:flutter_application_2/opciones.dart';
 import 'package:flutter_application_2/promociones.dart';
 import 'package:flutter_application_2/routes/pages.dart';
-import 'package:flutter_application_2/soporte.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class BakeryApp extends StatelessWidget {
