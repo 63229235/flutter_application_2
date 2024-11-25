@@ -204,8 +204,7 @@ class MyCombinedContainer extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.transparent,
-                onPrimary: Colors.transparent,
+                foregroundColor: Colors.transparent, backgroundColor: Colors.transparent,
               ),
               child: Icon(
                 Icons.add,

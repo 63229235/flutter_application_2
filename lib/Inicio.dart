@@ -52,7 +52,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
             icon: Icon(Icons.account_circle),
             label: Text('Perfil'),
             style: ElevatedButton.styleFrom(
-              primary: Colors.transparent,
+              backgroundColor: Colors.transparent,
               elevation: 0,
             ),
           ),
@@ -68,7 +68,7 @@ class _BakeryOptionsScreenState extends State<BakeryOptionsScreen> {
             icon: Icon(Icons.settings),
             label: Text('Configuración'),
             style: ElevatedButton.styleFrom(
-              primary: Colors.transparent,
+              backgroundColor: Colors.transparent,
               elevation: 0,
             ),
           ),

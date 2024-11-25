@@ -33,4 +33,10 @@ class _SplashPageState extends State<SplashPage> {
       body: Center(child: CircularProgressIndicator()),
     );
   }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<SplashController>('_controller', _controller));
+  }
 }

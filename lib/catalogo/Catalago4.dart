@@ -172,9 +172,7 @@ class ProductGrid extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(horizontal: 4),
-                            primary: Colors.deepOrange,
-                            onPrimary: Colors.white,
+                            foregroundColor: Colors.white, backgroundColor: Colors.deepOrange, padding: EdgeInsets.symmetric(horizontal: 4),
                           ),
                           child: Text('Agregar'),
                         ),

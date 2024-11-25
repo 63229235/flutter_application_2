@@ -48,8 +48,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.pushNamed(context, '/user_login');
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.orange,
-                    onPrimary: Colors.white,
+                    foregroundColor: Colors.white, backgroundColor: Colors.orange,
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     textStyle: TextStyle(fontSize: 18),
                   ),
@@ -61,8 +60,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.pushNamed(context, '/afiliar_local');
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.green,
-                    onPrimary: Colors.white,
+                    foregroundColor: Colors.white, backgroundColor: Colors.green,
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     textStyle: TextStyle(fontSize: 18),
                   ),

@@ -22,12 +22,12 @@ class MyOpcioness extends StatelessWidget {
           elevation: 4,
         ),
         textTheme: TextTheme(
-          headline6: TextStyle(
+          titleLarge: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
-          subtitle1: TextStyle(
+          titleMedium: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
             color: Colors.black87,
@@ -35,8 +35,7 @@ class MyOpcioness extends StatelessWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            primary: Color(0xFFE6B08B),
-            onPrimary: Colors.white,
+            foregroundColor: Colors.white, backgroundColor: Color(0xFFE6B08B),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -88,7 +87,7 @@ class _HomePageState extends State<MyHome> {
             SizedBox(height: 20.0),
             Text(
               '¡Aprovecha las promociones con un 30% de descuento en las tiendas mostradas!',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             Expanded(
@@ -213,7 +212,7 @@ class MyCombinedContainer extends StatelessWidget {
             left: 12,
             child: Text(
               bottomText,
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
         ],

@@ -37,8 +37,7 @@ class afilio extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => Afiliologin()));
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.orange,
-                    onPrimary: Colors.white,
+                    foregroundColor: Colors.white, backgroundColor: Colors.orange,
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     textStyle: TextStyle(fontSize: 18),
                   ),
@@ -51,8 +50,7 @@ class afilio extends StatelessWidget {
                         builder: (context) => LocalRegistrationScreen()));
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.green,
-                    onPrimary: Colors.white,
+                    foregroundColor: Colors.white, backgroundColor: Colors.green,
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     textStyle: TextStyle(fontSize: 18),
                   ),
